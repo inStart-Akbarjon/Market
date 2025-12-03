@@ -1,0 +1,15 @@
+C:\Users\Akbarjon\RiderProjects\Market.API\Market.Application\bin\Debug\net10.0\Market.Application.deps.json
+C:\Users\Akbarjon\RiderProjects\Market.API\Market.Application\bin\Debug\net10.0\Market.Application.dll
+C:\Users\Akbarjon\RiderProjects\Market.API\Market.Application\bin\Debug\net10.0\Market.Application.pdb
+C:\Users\Akbarjon\RiderProjects\Market.API\Market.Application\bin\Debug\net10.0\Market.Domain.dll
+C:\Users\Akbarjon\RiderProjects\Market.API\Market.Application\bin\Debug\net10.0\Market.Domain.pdb
+C:\Users\Akbarjon\RiderProjects\Market.API\Market.Application\obj\Debug\net10.0\Market.Application.csproj.AssemblyReference.cache
+C:\Users\Akbarjon\RiderProjects\Market.API\Market.Application\obj\Debug\net10.0\Market.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Akbarjon\RiderProjects\Market.API\Market.Application\obj\Debug\net10.0\Market.Application.AssemblyInfoInputs.cache
+C:\Users\Akbarjon\RiderProjects\Market.API\Market.Application\obj\Debug\net10.0\Market.Application.AssemblyInfo.cs
+C:\Users\Akbarjon\RiderProjects\Market.API\Market.Application\obj\Debug\net10.0\Market.Application.csproj.CoreCompileInputs.cache
+C:\Users\Akbarjon\RiderProjects\Market.API\Market.Application\obj\Debug\net10.0\Market.A.6BA0EDCE.Up2Date
+C:\Users\Akbarjon\RiderProjects\Market.API\Market.Application\obj\Debug\net10.0\Market.Application.dll
+C:\Users\Akbarjon\RiderProjects\Market.API\Market.Application\obj\Debug\net10.0\refint\Market.Application.dll
+C:\Users\Akbarjon\RiderProjects\Market.API\Market.Application\obj\Debug\net10.0\Market.Application.pdb
+C:\Users\Akbarjon\RiderProjects\Market.API\Market.Application\obj\Debug\net10.0\ref\Market.Application.dll
