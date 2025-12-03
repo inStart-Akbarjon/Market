@@ -1,0 +1,74 @@
+﻿syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+option csharp_namespace = "Market";
+
+package product;
+
+service Product{
+    rpc CreateProduct(CreateProductRequest) returns (CreateProductResponse) {}
+    rpc GetAllProducts(GetAllProductsRequest) returns (GetAllProductsResponse) {}
+    rpc GetProductById(GetProductByIdRequest) returns (GetProductByIdResponse) {}
+    rpc UpdateProduct(UpdateProductRequest) returns (UpdateProductResponse) {}
+    rpc DeleteProduct(DeleteProductRequest) returns (DeleteProductResponse) {}
+}
+
+message GetAllProductsRequest {
+}
+
+message GetAllProductsResponse {
+    int32 Id = 1;
+    string Title = 2;
+    string Description = 3;
+    double Price = 4;
+    google.protobuf.Timestamp CreatedAt = 5;
+}
+
+message GetProductByIdRequest {
+    int32 Id = 1;
+}
+
+message GetProductByIdResponse {
+    int32 Id = 1;
+    string Title = 2;
+    string Description = 3;
+    double Price = 4;
+    google.protobuf.Timestamp CreatedAt = 5;
+}
+
+message CreateProductRequest {
+    string Title = 1;
+    string Description = 2;
+    double Price = 3;
+}
+
+message CreateProductResponse {
+    string Title = 2;
+    string Description = 3;
+    double Price = 4;
+}
+
+message UpdateProductRequest {
+    int32 Id = 1;
+    string Title = 2;
+    string Description = 3;
+    double Price = 4;
+    google.protobuf.Timestamp CreatedAt = 5;
+}
+
+message UpdateProductResponse {
+    int32 Id = 1;
+    string Title = 2;
+    string Description = 3;
+    double Price = 4;
+    google.protobuf.Timestamp CreatedAt = 5;
+}
+
+message DeleteProductRequest {
+    int32 Id = 1;
+}
+
+message DeleteProductResponse {
+    
+}
