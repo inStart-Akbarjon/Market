@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿using Market.Application.DTOs.Request.Product;
 using Market.Application.DTOs.Response.Product;
 using Market.Domain.Models;
@@ -13,4 +14,11 @@ public class UpdateProductCommand : IRequest<UpdateProductResponse>
     {
         _product = product;
     }
+=======
+﻿namespace Market.Application.Commands.UpdateProduct;
+
+public class UpdateProductCommand
+{
+    
+>>>>>>> 0cbf7de300fb8e8025bb247a7d8cffb5d24191fa
 }

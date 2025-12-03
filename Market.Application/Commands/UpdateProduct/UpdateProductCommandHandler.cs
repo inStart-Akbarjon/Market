@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿using Market.Application.DTOs.Response.Product;
 using Market.Application.Interfaces.Repositories;
 using Market.Domain.Models;
@@ -29,4 +30,11 @@ public class UpdateProductCommandHandler : IRequestHandler<UpdateProductCommand,
         await _productRepository.SaveChangesAsync();
         return new UpdateProductResponse();
     }
+=======
+﻿namespace Market.Application.Commands.UpdateProduct;
+
+public class UpdateProductCommandHandler
+{
+    
+>>>>>>> 0cbf7de300fb8e8025bb247a7d8cffb5d24191fa
 }
