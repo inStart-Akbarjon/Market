@@ -1,10 +1,5 @@
-<<<<<<< HEAD
-﻿using Market.Application.Interfaces.Repositories;
-using Market.Application.DTOs.Response.Product;
-=======
-﻿using Market.Application.DTOs.Response.Product;
 using Market.Application.Interfaces.Repositories;
->>>>>>> 0cbf7de300fb8e8025bb247a7d8cffb5d24191fa
+using Market.Application.DTOs.Response.Product;
 using MediatR;
 
 namespace Market.Application.Queries.GetAllProducts;
