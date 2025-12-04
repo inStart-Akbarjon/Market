@@ -1,6 +1,4 @@
-﻿using Market.Application.DTOs.Request.Product;
-using Market.Application.DTOs.Response.Product;
-using Market.Application.Interfaces.Repositories;
+﻿using Market.Application.Interfaces.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Market.Infrastructure.Data;
 using Market.Domain.Models;
@@ -15,9 +13,9 @@ public class ProductRepository : IProductRepository
     {
         _context = context;
     }
-    public async Task<List<Product>> GetAllAsync()
+    public IQueryable<Product> GetAll()
     {
-        return await _context.Products.ToListAsync();
+        return _context.Products.AsQueryable().AsNoTracking();
     }
 
     public async Task<Product?> GetByIdAsync(int id)

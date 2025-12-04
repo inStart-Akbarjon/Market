@@ -1,7 +1,6 @@
 using Market.Application.DTOs.Response.Product;
 using Market.Application.Interfaces.Repositories;
 using Market.Application.Mappers;
-using Market.Domain.Models;
 using MediatR;
 
 namespace Market.Application.Commands.UpdateProduct;
