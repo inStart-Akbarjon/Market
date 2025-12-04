@@ -34,26 +34,27 @@ namespace Market {
             "KAkSEwoLRGVzY3JpcHRpb24YAyABKAkSDQoFUHJpY2UYBCABKAESLQoJQ3Jl",
             "YXRlZEF0GAUgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcCJJChRD",
             "cmVhdGVQcm9kdWN0UmVxdWVzdBINCgVUaXRsZRgBIAEoCRITCgtEZXNjcmlw",
-            "dGlvbhgCIAEoCRINCgVQcmljZRgDIAEoASJKChVDcmVhdGVQcm9kdWN0UmVz",
-            "cG9uc2USDQoFVGl0bGUYAiABKAkSEwoLRGVzY3JpcHRpb24YAyABKAkSDQoF",
-            "UHJpY2UYBCABKAEihAEKFFVwZGF0ZVByb2R1Y3RSZXF1ZXN0EgoKAklkGAEg",
-            "ASgFEg0KBVRpdGxlGAIgASgJEhMKC0Rlc2NyaXB0aW9uGAMgASgJEg0KBVBy",
-            "aWNlGAQgASgBEi0KCUNyZWF0ZWRBdBgFIAEoCzIaLmdvb2dsZS5wcm90b2J1",
-            "Zi5UaW1lc3RhbXAihQEKFVVwZGF0ZVByb2R1Y3RSZXNwb25zZRIKCgJJZBgB",
-            "IAEoBRINCgVUaXRsZRgCIAEoCRITCgtEZXNjcmlwdGlvbhgDIAEoCRINCgVQ",
-            "cmljZRgEIAEoARItCglDcmVhdGVkQXQYBSABKAsyGi5nb29nbGUucHJvdG9i",
-            "dWYuVGltZXN0YW1wIiIKFERlbGV0ZVByb2R1Y3RSZXF1ZXN0EgoKAklkGAEg",
-            "ASgFIhcKFURlbGV0ZVByb2R1Y3RSZXNwb25zZTKpAwoHUHJvZHVjdBJQCg1D",
-            "cmVhdGVQcm9kdWN0Eh0ucHJvZHVjdC5DcmVhdGVQcm9kdWN0UmVxdWVzdBoe",
-            "LnByb2R1Y3QuQ3JlYXRlUHJvZHVjdFJlc3BvbnNlIgASUwoOR2V0QWxsUHJv",
-            "ZHVjdHMSHi5wcm9kdWN0LkdldEFsbFByb2R1Y3RzUmVxdWVzdBofLnByb2R1",
-            "Y3QuR2V0QWxsUHJvZHVjdHNSZXNwb25zZSIAElMKDkdldFByb2R1Y3RCeUlk",
-            "Eh4ucHJvZHVjdC5HZXRQcm9kdWN0QnlJZFJlcXVlc3QaHy5wcm9kdWN0Lkdl",
-            "dFByb2R1Y3RCeUlkUmVzcG9uc2UiABJQCg1VcGRhdGVQcm9kdWN0Eh0ucHJv",
-            "ZHVjdC5VcGRhdGVQcm9kdWN0UmVxdWVzdBoeLnByb2R1Y3QuVXBkYXRlUHJv",
-            "ZHVjdFJlc3BvbnNlIgASUAoNRGVsZXRlUHJvZHVjdBIdLnByb2R1Y3QuRGVs",
-            "ZXRlUHJvZHVjdFJlcXVlc3QaHi5wcm9kdWN0LkRlbGV0ZVByb2R1Y3RSZXNw",
-            "b25zZSIAQgmqAgZNYXJrZXRiBnByb3RvMw=="));
+            "dGlvbhgCIAEoCRINCgVQcmljZRgDIAEoASKFAQoVQ3JlYXRlUHJvZHVjdFJl",
+            "c3BvbnNlEgoKAklkGAEgASgFEg0KBVRpdGxlGAIgASgJEhMKC0Rlc2NyaXB0",
+            "aW9uGAMgASgJEg0KBVByaWNlGAQgASgBEi0KCUNyZWF0ZWRBdBgFIAEoCzIa",
+            "Lmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXAihAEKFFVwZGF0ZVByb2R1Y3RS",
+            "ZXF1ZXN0EgoKAklkGAEgASgFEg0KBVRpdGxlGAIgASgJEhMKC0Rlc2NyaXB0",
+            "aW9uGAMgASgJEg0KBVByaWNlGAQgASgBEi0KCUNyZWF0ZWRBdBgFIAEoCzIa",
+            "Lmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXAihQEKFVVwZGF0ZVByb2R1Y3RS",
+            "ZXNwb25zZRIKCgJJZBgBIAEoBRINCgVUaXRsZRgCIAEoCRITCgtEZXNjcmlw",
+            "dGlvbhgDIAEoCRINCgVQcmljZRgEIAEoARItCglDcmVhdGVkQXQYBSABKAsy",
+            "Gi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wIiIKFERlbGV0ZVByb2R1Y3RS",
+            "ZXF1ZXN0EgoKAklkGAEgASgFIhcKFURlbGV0ZVByb2R1Y3RSZXNwb25zZTKp",
+            "AwoHUHJvZHVjdBJQCg1DcmVhdGVQcm9kdWN0Eh0ucHJvZHVjdC5DcmVhdGVQ",
+            "cm9kdWN0UmVxdWVzdBoeLnByb2R1Y3QuQ3JlYXRlUHJvZHVjdFJlc3BvbnNl",
+            "IgASUwoOR2V0QWxsUHJvZHVjdHMSHi5wcm9kdWN0LkdldEFsbFByb2R1Y3Rz",
+            "UmVxdWVzdBofLnByb2R1Y3QuR2V0QWxsUHJvZHVjdHNSZXNwb25zZSIAElMK",
+            "DkdldFByb2R1Y3RCeUlkEh4ucHJvZHVjdC5HZXRQcm9kdWN0QnlJZFJlcXVl",
+            "c3QaHy5wcm9kdWN0LkdldFByb2R1Y3RCeUlkUmVzcG9uc2UiABJQCg1VcGRh",
+            "dGVQcm9kdWN0Eh0ucHJvZHVjdC5VcGRhdGVQcm9kdWN0UmVxdWVzdBoeLnBy",
+            "b2R1Y3QuVXBkYXRlUHJvZHVjdFJlc3BvbnNlIgASUAoNRGVsZXRlUHJvZHVj",
+            "dBIdLnByb2R1Y3QuRGVsZXRlUHJvZHVjdFJlcXVlc3QaHi5wcm9kdWN0LkRl",
+            "bGV0ZVByb2R1Y3RSZXNwb25zZSIAQgmqAgZNYXJrZXRiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -62,7 +63,7 @@ namespace Market {
             new pbr::GeneratedClrTypeInfo(typeof(global::Market.GetProductByIdRequest), global::Market.GetProductByIdRequest.Parser, new[]{ "Id" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Market.GetProductByIdResponse), global::Market.GetProductByIdResponse.Parser, new[]{ "Id", "Title", "Description", "Price", "CreatedAt" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Market.CreateProductRequest), global::Market.CreateProductRequest.Parser, new[]{ "Title", "Description", "Price" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Market.CreateProductResponse), global::Market.CreateProductResponse.Parser, new[]{ "Title", "Description", "Price" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Market.CreateProductResponse), global::Market.CreateProductResponse.Parser, new[]{ "Id", "Title", "Description", "Price", "CreatedAt" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Market.UpdateProductRequest), global::Market.UpdateProductRequest.Parser, new[]{ "Id", "Title", "Description", "Price", "CreatedAt" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Market.UpdateProductResponse), global::Market.UpdateProductResponse.Parser, new[]{ "Id", "Title", "Description", "Price", "CreatedAt" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Market.DeleteProductRequest), global::Market.DeleteProductRequest.Parser, new[]{ "Id" }, null, null, null, null),
@@ -1449,9 +1450,11 @@ namespace Market {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CreateProductResponse(CreateProductResponse other) : this() {
+      id_ = other.id_;
       title_ = other.title_;
       description_ = other.description_;
       price_ = other.price_;
+      createdAt_ = other.createdAt_ != null ? other.createdAt_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1459,6 +1462,18 @@ namespace Market {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public CreateProductResponse Clone() {
       return new CreateProductResponse(this);
+    }
+
+    /// <summary>Field number for the "Id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private int id_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int Id {
+      get { return id_; }
+      set {
+        id_ = value;
+      }
     }
 
     /// <summary>Field number for the "Title" field.</summary>
@@ -1497,6 +1512,18 @@ namespace Market {
       }
     }
 
+    /// <summary>Field number for the "CreatedAt" field.</summary>
+    public const int CreatedAtFieldNumber = 5;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp createdAt_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Google.Protobuf.WellKnownTypes.Timestamp CreatedAt {
+      get { return createdAt_; }
+      set {
+        createdAt_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
@@ -1512,9 +1539,11 @@ namespace Market {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (Id != other.Id) return false;
       if (Title != other.Title) return false;
       if (Description != other.Description) return false;
       if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(Price, other.Price)) return false;
+      if (!object.Equals(CreatedAt, other.CreatedAt)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -1522,9 +1551,11 @@ namespace Market {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
+      if (Id != 0) hash ^= Id.GetHashCode();
       if (Title.Length != 0) hash ^= Title.GetHashCode();
       if (Description.Length != 0) hash ^= Description.GetHashCode();
       if (Price != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(Price);
+      if (createdAt_ != null) hash ^= CreatedAt.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1543,6 +1574,10 @@ namespace Market {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
       if (Title.Length != 0) {
         output.WriteRawTag(18);
         output.WriteString(Title);
@@ -1554,6 +1589,10 @@ namespace Market {
       if (Price != 0D) {
         output.WriteRawTag(33);
         output.WriteDouble(Price);
+      }
+      if (createdAt_ != null) {
+        output.WriteRawTag(42);
+        output.WriteMessage(CreatedAt);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -1565,6 +1604,10 @@ namespace Market {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Id != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(Id);
+      }
       if (Title.Length != 0) {
         output.WriteRawTag(18);
         output.WriteString(Title);
@@ -1577,6 +1620,10 @@ namespace Market {
         output.WriteRawTag(33);
         output.WriteDouble(Price);
       }
+      if (createdAt_ != null) {
+        output.WriteRawTag(42);
+        output.WriteMessage(CreatedAt);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1587,6 +1634,9 @@ namespace Market {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
+      if (Id != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Id);
+      }
       if (Title.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Title);
       }
@@ -1595,6 +1645,9 @@ namespace Market {
       }
       if (Price != 0D) {
         size += 1 + 8;
+      }
+      if (createdAt_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(CreatedAt);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -1608,6 +1661,9 @@ namespace Market {
       if (other == null) {
         return;
       }
+      if (other.Id != 0) {
+        Id = other.Id;
+      }
       if (other.Title.Length != 0) {
         Title = other.Title;
       }
@@ -1616,6 +1672,12 @@ namespace Market {
       }
       if (other.Price != 0D) {
         Price = other.Price;
+      }
+      if (other.createdAt_ != null) {
+        if (createdAt_ == null) {
+          CreatedAt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+        }
+        CreatedAt.MergeFrom(other.CreatedAt);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -1636,6 +1698,10 @@ namespace Market {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
           case 18: {
             Title = input.ReadString();
             break;
@@ -1646,6 +1712,13 @@ namespace Market {
           }
           case 33: {
             Price = input.ReadDouble();
+            break;
+          }
+          case 42: {
+            if (createdAt_ == null) {
+              CreatedAt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(CreatedAt);
             break;
           }
         }
@@ -1667,6 +1740,10 @@ namespace Market {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
+          case 8: {
+            Id = input.ReadInt32();
+            break;
+          }
           case 18: {
             Title = input.ReadString();
             break;
@@ -1677,6 +1754,13 @@ namespace Market {
           }
           case 33: {
             Price = input.ReadDouble();
+            break;
+          }
+          case 42: {
+            if (createdAt_ == null) {
+              CreatedAt = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(CreatedAt);
             break;
           }
         }

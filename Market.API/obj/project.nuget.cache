@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "DKhJvEQzdMY=",
+  "dgSpecHash": "8bCdE9Gj2Ps=",
   "success": true,
   "projectFilePath": "C:\\Users\\Akbarjon\\RiderProjects\\Market.API\\Market.API\\Market.API.csproj",
   "expectedPackageFiles": [
@@ -18,6 +18,9 @@
     "C:\\Users\\Akbarjon\\.nuget\\packages\\mediatr\\13.1.0\\mediatr.13.1.0.nupkg.sha512",
     "C:\\Users\\Akbarjon\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
     "C:\\Users\\Akbarjon\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\11.1.0\\mediatr.extensions.microsoft.dependencyinjection.11.1.0.nupkg.sha512",
+    "C:\\Users\\Akbarjon\\.nuget\\packages\\messagepack\\3.1.4\\messagepack.3.1.4.nupkg.sha512",
+    "C:\\Users\\Akbarjon\\.nuget\\packages\\messagepack.annotations\\3.1.4\\messagepack.annotations.3.1.4.nupkg.sha512",
+    "C:\\Users\\Akbarjon\\.nuget\\packages\\messagepackanalyzer\\3.1.4\\messagepackanalyzer.3.1.4.nupkg.sha512",
     "C:\\Users\\Akbarjon\\.nuget\\packages\\microsoft.aspnetcore.grpc.jsontranscoding\\10.0.0\\microsoft.aspnetcore.grpc.jsontranscoding.10.0.0.nupkg.sha512",
     "C:\\Users\\Akbarjon\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.0-rc.2.25502.107\\microsoft.aspnetcore.openapi.10.0.0-rc.2.25502.107.nupkg.sha512",
     "C:\\Users\\Akbarjon\\.nuget\\packages\\microsoft.build\\17.7.2\\microsoft.build.17.7.2.nupkg.sha512",
