@@ -6,10 +6,10 @@ namespace Market.Application.Commands.DeleteProduct;
 
 public class DeleteProductCommand : IRequest<DeleteProductResponse>
 {
-    public int Id  { get; set; }
+    public int _id  { get; set; }
     
     public DeleteProductCommand(int id)
     {
-        Id = id;
+        _id = id;
     }
 }

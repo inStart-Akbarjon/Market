@@ -1,5 +1,6 @@
 ﻿using Market.Application.DTOs.Response.Product;
 using Market.Application.Interfaces.Repositories;
+using Market.Application.Mappers;
 using MediatR;
 
 namespace Market.Application.Commands.CreateProduct;
@@ -16,6 +17,7 @@ public class CreateProductCommandHandler : IRequestHandler<CreateProductCommand,
     public async Task<AddProductResponse> Handle(CreateProductCommand request, CancellationToken cancellationToken)
     {
         await _productRepository.CreateAsync(request._product);
-        return new AddProductResponse();
+        await _productRepository.SaveChangesAsync();
+        return ProductMappers.ToAddProductResponse(request._product);
     }
 }

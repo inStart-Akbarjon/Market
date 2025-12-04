@@ -15,44 +15,20 @@ public class ProductRepository : IProductRepository
     {
         _context = context;
     }
-    public async Task<List<GetAllProductsResponse>> GetAllAsync()
+    public async Task<List<Product>> GetAllAsync()
     {
-        return await _context.Products.Select(c => new GetAllProductsResponse()
-        {
-            Id = c.Id,
-            Title = c.Title,
-            Description = c.Description,
-            Price = c.Price,
-            CreatedAt =  c.CreatedAt,
-        }).ToListAsync();
+        return await _context.Products.ToListAsync();
     }
 
     public async Task<Product?> GetByIdAsync(int id)
     {
         var product = await _context.Products.FirstOrDefaultAsync(p => p.Id == id);
-
-        return new Product()
-        {
-            Id = product.Id,
-            Title = product.Title,
-            Description = product.Description,
-            Price = product.Price,
-            CreatedAt =  product.CreatedAt,
-        };
+        return product;
     }
 
-    public async Task CreateAsync(AddProductRequest product)
+    public async Task CreateAsync(Product product)
     {
-        var productEntity = new Product()
-        {
-            Title = product.Title,
-            Description = product.Description,
-            Price = product.Price,
-        };
-        
-        await _context.Products.AddAsync(productEntity);
-        
-        await _context.SaveChangesAsync();
+        await _context.Products.AddAsync(product);
     }
 
     public void UpdateAsync(Product product)
@@ -60,18 +36,9 @@ public class ProductRepository : IProductRepository
         _context.Products.Update(product);
     }
 
-    public void DeleteAsync(GetByIdProductResponse product)
+    public void DeleteAsync(Product product)
     {
-        var productEntity = new Product()
-        {
-            Id = product.Id,
-            Title = product.Title,
-            Description = product.Description,
-            Price = product.Price,
-            CreatedAt = product.CreatedAt,
-        };
-        
-        _context.Products.Remove(productEntity);
+        _context.Products.Remove(product);
     }
     
     public async Task SaveChangesAsync()

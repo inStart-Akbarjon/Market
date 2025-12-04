@@ -1,5 +1,6 @@
 ﻿using Market.Application.DTOs.Response.Product;
 using Market.Application.Interfaces.Repositories;
+using Market.Application.Mappers;
 using MediatR;
 
 namespace Market.Application.Commands.DeleteProduct;
@@ -15,8 +16,18 @@ public class DeleteProductCommandHandler : IRequestHandler<DeleteProductCommand,
     
     public async Task<DeleteProductResponse> Handle(DeleteProductCommand request, CancellationToken cancellationToken)
     {
-        var product = await _productRepository.GetByIdAsync(request.Id);
-        _productRepository.DeleteAsync(product);
-        return new DeleteProductResponse();
+        var product = await _productRepository.GetByIdAsync(request._id);
+
+        if (product == null)
+        {
+            return null;
+        }
+        else
+        {
+            _productRepository.DeleteAsync(product);
+            await _productRepository.SaveChangesAsync();
+            return ProductMappers.ToDeleteProductResponse(product);
+        }
+        
     }
 }

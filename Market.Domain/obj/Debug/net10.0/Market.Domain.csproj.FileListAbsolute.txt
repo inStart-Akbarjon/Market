@@ -9,3 +9,4 @@ C:\Users\Akbarjon\RiderProjects\Market.API\Market.Domain\obj\Debug\net10.0\Marke
 C:\Users\Akbarjon\RiderProjects\Market.API\Market.Domain\obj\Debug\net10.0\refint\Market.Domain.dll
 C:\Users\Akbarjon\RiderProjects\Market.API\Market.Domain\obj\Debug\net10.0\Market.Domain.pdb
 C:\Users\Akbarjon\RiderProjects\Market.API\Market.Domain\obj\Debug\net10.0\ref\Market.Domain.dll
+C:\Users\Akbarjon\RiderProjects\Market.API\Market.Domain\obj\Debug\net10.0\Market.Domain.sourcelink.json

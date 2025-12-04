@@ -1,5 +1,5 @@
-using Market.Application.DTOs.Request.Product;
-using Market.Application.DTOs.Response.Product
+using Market.Application.DTOs.Response.Product;
+using Market.Domain.Models;
 using MediatR;
 
 namespace Market.Application.Commands.UpdateProduct;
@@ -7,10 +7,18 @@ namespace Market.Application.Commands.UpdateProduct;
 public class UpdateProductCommand : IRequest<UpdateProductResponse>
 {
 
-    public UpdateProductRequest _product { get; set; }
+    public int  Id { get; set; }
+    public string Title { get; set; }
+    public string?  Description { get; set; }
+    public double Price { get; set; }
+    public DateTime CreatedAt { get; set; }
 
-    public UpdateProductCommand(UpdateProductRequest product)
+    public UpdateProductCommand(Product product)
     {
-        _product = product;
+        Id = product.Id;
+        Title = product.Title;
+        Description = product.Description;
+        Price = product.Price;
+        CreatedAt = product.CreatedAt;
     }
 }

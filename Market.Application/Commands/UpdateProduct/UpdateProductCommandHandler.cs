@@ -1,5 +1,6 @@
 using Market.Application.DTOs.Response.Product;
 using Market.Application.Interfaces.Repositories;
+using Market.Application.Mappers;
 using Market.Domain.Models;
 using MediatR;
 
@@ -15,18 +16,25 @@ public class UpdateProductCommandHandler : IRequestHandler<UpdateProductCommand,
     }
     public async Task<UpdateProductResponse> Handle(UpdateProductCommand request, CancellationToken cancellationToken)
     {
-        var product = await _productRepository.GetByIdAsync(request.);
+        var product = await _productRepository.GetByIdAsync(request.Id);
 
-        _productRepository.UpdateAsync(new Product()
+        if (product == null)
         {
-            Id = product.Id,
-            Title = product.Title,
-            Description = product.Description,
-            Price = product.Price,
-            CreatedAt =  product.CreatedAt,
-        });
+            return null;
+        }
+        else
+        {
+            product.Id = request.Id;
+            product.Title = request.Title;
+            product.Description = request.Description;
+            product.Price = request.Price;
+            product.CreatedAt = request.CreatedAt;
+            
+            _productRepository.UpdateAsync(product);
+            await _productRepository.SaveChangesAsync();
+            
+            return ProductMappers.ToUpdateProductResponse(product);
+        }
 
-        await _productRepository.SaveChangesAsync();
-        return new UpdateProductResponse();
     }
 }
