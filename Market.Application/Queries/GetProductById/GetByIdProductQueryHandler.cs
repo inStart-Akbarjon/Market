@@ -1,5 +1,6 @@
 ﻿using Market.Application.DTOs.Response.Product;
 using Market.Application.Interfaces.Repositories;
+using Market.Application.Mappers;
 using MediatR;
 
 namespace Market.Application.Queries.GetProductById;
@@ -16,6 +17,15 @@ public class GetByIdProductQueryHandler : IRequestHandler<GetByIdProductQuery, G
     public async Task<GetByIdProductResponse> Handle(GetByIdProductQuery request, CancellationToken cancellationToken)
     {
         var product = await _productRepository.GetByIdAsync(request.Id);
-        return product;
+        
+        if (product == null)
+        {
+            return null;
+        }
+        else
+        {
+            var response = ProductMappers.ToGetByIdProductResponse(product);
+            return response;
+        }
     }
 }

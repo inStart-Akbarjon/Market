@@ -1,14 +1,15 @@
 ﻿using Market.Application.DTOs.Request.Product;
 using Market.Application.DTOs.Response.Product;
+using Market.Domain.Models;
 using MediatR;
 
 namespace Market.Application.Commands.CreateProduct;
 
 public class CreateProductCommand : IRequest<AddProductResponse>
 {
-    public AddProductRequest _product { get; set; }
+    public Product _product { get; set; }
     
-    public CreateProductCommand(AddProductRequest product)
+    public CreateProductCommand(Product product)
     {
         _product = product;
     }
