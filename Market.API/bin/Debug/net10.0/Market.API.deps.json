@@ -9,10 +9,13 @@
       "Market.API/1.0.0": {
         "dependencies": {
           "Grpc.AspNetCore": "2.71.0",
+          "Grpc.Net.ClientFactory": "2.71.0",
+          "Grpc.Net.Common": "2.71.0",
           "Market.Application": "1.0.0",
           "Market.Infrastructure": "1.0.0",
           "MediatR": "13.1.0",
           "MediatR.Extensions.Microsoft.DependencyInjection": "11.1.0",
+          "MessagePack": "3.1.4",
           "Microsoft.AspNetCore.Grpc.JsonTranscoding": "10.0.0",
           "Microsoft.AspNetCore.OpenApi": "10.0.0-rc.2.25502.107",
           "Microsoft.EntityFrameworkCore.Design": "10.0.0",
@@ -147,6 +150,26 @@
           "lib/netstandard2.1/MediatR.Extensions.Microsoft.DependencyInjection.dll": {
             "assemblyVersion": "11.0.0.0",
             "fileVersion": "11.1.0.0"
+          }
+        }
+      },
+      "MessagePack/3.1.4": {
+        "dependencies": {
+          "MessagePack.Annotations": "3.1.4",
+          "Microsoft.NET.StringTools": "17.14.28"
+        },
+        "runtime": {
+          "lib/net9.0/MessagePack.dll": {
+            "assemblyVersion": "3.1.4.0",
+            "fileVersion": "3.1.4.0"
+          }
+        }
+      },
+      "MessagePack.Annotations/3.1.4": {
+        "runtime": {
+          "lib/netstandard2.0/MessagePack.Annotations.dll": {
+            "assemblyVersion": "3.1.4.0",
+            "fileVersion": "3.1.4.0"
           }
         }
       },
@@ -1047,6 +1070,20 @@
       "sha512": "sha512-RW3etRuy6Xp63cgqfC0r/ITOtUT0f9ymJl1+1XZdzsYUsfv7WBPC2kXGOP8IYpY/6c4Q6805vbIW/88DopUs3w==",
       "path": "mediatr.extensions.microsoft.dependencyinjection/11.1.0",
       "hashPath": "mediatr.extensions.microsoft.dependencyinjection.11.1.0.nupkg.sha512"
+    },
+    "MessagePack/3.1.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-BH0wlHWmVoZpbAPyyt2Awbq30C+ZsS3eHSkYdnyUAbqVJ22fAJDzn2xTieBeoT5QlcBzp61vHcv878YJGfi3mg==",
+      "path": "messagepack/3.1.4",
+      "hashPath": "messagepack.3.1.4.nupkg.sha512"
+    },
+    "MessagePack.Annotations/3.1.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-aVWrDAkCdqxwQsz/q0ldPh2EFn48M99YUzE9OvZjMq2RNLKz4o2z88iGFvSvbMqOWRweRvKPHBJZe22PRqzslQ==",
+      "path": "messagepack.annotations/3.1.4",
+      "hashPath": "messagepack.annotations.3.1.4.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Grpc.JsonTranscoding/10.0.0": {
       "type": "package",

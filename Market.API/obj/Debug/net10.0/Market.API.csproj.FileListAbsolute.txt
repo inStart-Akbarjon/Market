@@ -208,3 +208,6 @@ C:\Users\Akbarjon\RiderProjects\Market.API\Market.API\bin\Debug\net10.0\Grpc.Net
 C:\Users\Akbarjon\RiderProjects\Market.API\Market.API\bin\Debug\net10.0\Grpc.Net.ClientFactory.dll
 C:\Users\Akbarjon\RiderProjects\Market.API\Market.API\bin\Debug\net10.0\Grpc.Net.Common.dll
 C:\Users\Akbarjon\RiderProjects\Market.API\Market.API\bin\Debug\net10.0\Microsoft.AspNetCore.Grpc.JsonTranscoding.dll
+C:\Users\Akbarjon\RiderProjects\Market.API\Market.API\obj\Debug\net10.0\Market.API.sourcelink.json
+C:\Users\Akbarjon\RiderProjects\Market.API\Market.API\bin\Debug\net10.0\MessagePack.dll
+C:\Users\Akbarjon\RiderProjects\Market.API\Market.API\bin\Debug\net10.0\MessagePack.Annotations.dll

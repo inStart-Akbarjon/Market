@@ -8,12 +8,15 @@
 
     <ItemGroup>
         <PackageReference Include="Grpc.AspNetCore" Version="2.71.0" />
+        <PackageReference Include="Grpc.Net.ClientFactory" Version="2.71.0" />
+        <PackageReference Include="Grpc.Net.Common" Version="2.71.0" />
         <PackageReference Include="Grpc.Tools" Version="2.76.0">
           <PrivateAssets>all</PrivateAssets>
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
         <PackageReference Include="MediatR" Version="13.1.0" />
         <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
+        <PackageReference Include="MessagePack" Version="3.1.4" />
         <PackageReference Include="Microsoft.AspNetCore.Grpc.JsonTranscoding" Version="10.0.0" />
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.0-rc.2.25502.107"/>
         <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.0">

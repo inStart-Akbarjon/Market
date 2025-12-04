@@ -44,9 +44,11 @@ message CreateProductRequest {
 }
 
 message CreateProductResponse {
+    int32  Id = 1;
     string Title = 2;
     string Description = 3;
     double Price = 4;
+    google.protobuf.Timestamp CreatedAt = 5;
 }
 
 message UpdateProductRequest {

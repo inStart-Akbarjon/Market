@@ -6,6 +6,7 @@ using Market.Application.Queries.GetAllProducts;
 using Market.Application.Queries.GetProductById;
 using Google.Protobuf.WellKnownTypes;
 using Grpc.Core;
+using Market.Application.Mappers;
 using MediatR;
 
 namespace Market.API.gRPCServices; 
@@ -22,21 +23,24 @@ public class ProductGrpcService : Product.ProductBase
     public override async Task<CreateProductResponse> CreateProduct(CreateProductRequest request,
         ServerCallContext context)
     {
-        var product = new AddProductRequest
+        
+        var product = ProductMappers.ToAddProductEntity(new AddProductRequest()
         {
             Title = request.Title,
             Description = request.Description,
             Price = request.Price
-        };
-
+        });
+        
         var command = new CreateProductCommand(product);
         var res = await _mediator.Send(command);
 
         return await Task.FromResult(new CreateProductResponse()
         {
+            Id = res.Id,
             Title = res.Title,
             Description = res.Description,
-            Price = res.Price
+            Price = res.Price,
+            CreatedAt =  Timestamp.FromDateTime(res.CreatedAt.ToUniversalTime()),
         });
     }
 
@@ -64,6 +68,12 @@ public class ProductGrpcService : Product.ProductBase
     {
         var query = new GetByIdProductQuery(request.Id);
         var res = await _mediator.Send(query);
+
+        if (res == null)
+        {
+            throw new RpcException(new Status(StatusCode.NotFound,$"Product with id {request.Id} not found"));
+        }
+        
         return await Task.FromResult(new GetProductByIdResponse()
         {
             Id = res.Id,
@@ -76,22 +86,35 @@ public class ProductGrpcService : Product.ProductBase
 
     public async override Task<UpdateProductResponse> UpdateProduct(UpdateProductRequest request, ServerCallContext context)
     {
-        var command = new UpdateProductCommand(new Application.DTOs.Request.Product.UpdateProductRequest()
+
+        var product = new Domain.Models.Product()
         {
-            Title =  request.Title,
+            Id = request.Id,
+            Title = request.Title,
             Description = request.Description,
-            Price = request.Price
-        });
+            Price = request.Price,
+        };
+        
+        var command = new UpdateProductCommand(product);
         
         var res = await _mediator.Send(command);
-        return await Task.FromResult(new UpdateProductResponse()
+
+        if (res == null)
         {
-            Id = res.Id,
-            Title = res.Title,
-            Description = res.Description,
-            Price = res.Price,
-            CreatedAt = Timestamp.FromDateTime(res.CreatedAt.ToUniversalTime())
-        });
+            throw new RpcException(new Status(StatusCode.NotFound,$"Product with id {request.Id} not found"));
+        }
+        else
+        {
+            return await Task.FromResult(new UpdateProductResponse()
+            {
+                Id = res.Id,
+                Title = res.Title,
+                Description = res.Description,
+                Price = res.Price,
+                CreatedAt = Timestamp.FromDateTime(res.CreatedAt.ToUniversalTime())
+            });
+        }
+        
     }
 
     public async override Task<DeleteProductResponse> DeleteProduct(DeleteProductRequest request,
@@ -99,6 +122,12 @@ public class ProductGrpcService : Product.ProductBase
     {
         var command = new DeleteProductCommand(request.Id);
         var res = await _mediator.Send(command);
-        return await Task.FromResult(new DeleteProductResponse());
+
+        if (res == null)
+        {
+            throw new RpcException(new Status(StatusCode.NotFound,$"Product with id {request.Id} not found"));
+        }
+        
+        return await Task.FromResult(new DeleteProductResponse() {});
     }
 }
