@@ -12,6 +12,7 @@
           "Grpc.Net.ClientFactory": "2.71.0",
           "Grpc.Net.Common": "2.71.0",
           "Market.Application": "1.0.0",
+          "Market.Contracts": "1.0.0",
           "Market.Infrastructure": "1.0.0",
           "MediatR": "13.1.0",
           "MediatR.Extensions.Microsoft.DependencyInjection": "11.1.0",
@@ -19,7 +20,10 @@
           "Microsoft.AspNetCore.Grpc.JsonTranscoding": "10.0.0",
           "Microsoft.AspNetCore.OpenApi": "10.0.0-rc.2.25502.107",
           "Microsoft.EntityFrameworkCore.Design": "10.0.0",
-          "Npgsql.EntityFrameworkCore.PostgreSQL": "10.0.0"
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "10.0.0",
+          "ServiceModel.Grpc.AspNetCore": "1.20.0",
+          "ServiceModel.Grpc.MessagePackMarshaller": "1.20.0",
+          "Swashbuckle.AspNetCore": "10.0.1"
         },
         "runtime": {
           "Market.API.dll": {}
@@ -188,7 +192,7 @@
       },
       "Microsoft.AspNetCore.OpenApi/10.0.0-rc.2.25502.107": {
         "dependencies": {
-          "Microsoft.OpenApi": "2.0.0"
+          "Microsoft.OpenApi": "2.3.0"
         },
         "runtime": {
           "lib/net10.0/Microsoft.AspNetCore.OpenApi.dll": {
@@ -748,11 +752,11 @@
           }
         }
       },
-      "Microsoft.OpenApi/2.0.0": {
+      "Microsoft.OpenApi/2.3.0": {
         "runtime": {
           "lib/net8.0/Microsoft.OpenApi.dll": {
-            "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.0.0.0"
+            "assemblyVersion": "2.3.0.0",
+            "fileVersion": "2.3.0.0"
           }
         }
       },
@@ -796,6 +800,110 @@
           "lib/net10.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll": {
             "assemblyVersion": "10.0.0.0",
             "fileVersion": "10.0.0.0"
+          }
+        }
+      },
+      "ServiceModel.Grpc/1.20.0": {
+        "dependencies": {
+          "ServiceModel.Grpc.Core": "1.20.0",
+          "ServiceModel.Grpc.Emit": "1.20.0"
+        },
+        "runtime": {
+          "lib/net10.0/ServiceModel.Grpc.Filters.dll": {
+            "assemblyVersion": "1.20.0.0",
+            "fileVersion": "1.20.0.0"
+          },
+          "lib/net10.0/ServiceModel.Grpc.Interceptors.dll": {
+            "assemblyVersion": "1.20.0.0",
+            "fileVersion": "1.20.0.0"
+          },
+          "lib/net10.0/ServiceModel.Grpc.dll": {
+            "assemblyVersion": "1.20.0.0",
+            "fileVersion": "1.20.0.0"
+          }
+        }
+      },
+      "ServiceModel.Grpc.AspNetCore/1.20.0": {
+        "dependencies": {
+          "Grpc.AspNetCore.Server": "2.71.0",
+          "ServiceModel.Grpc": "1.20.0"
+        },
+        "runtime": {
+          "lib/net10.0/ServiceModel.Grpc.AspNetCore.dll": {
+            "assemblyVersion": "1.20.0.0",
+            "fileVersion": "1.20.0.0"
+          }
+        }
+      },
+      "ServiceModel.Grpc.Core/1.20.0": {
+        "dependencies": {
+          "Grpc.Core.Api": "2.71.0"
+        },
+        "runtime": {
+          "lib/net10.0/ServiceModel.Grpc.Core.dll": {
+            "assemblyVersion": "1.20.0.0",
+            "fileVersion": "1.20.0.0"
+          }
+        }
+      },
+      "ServiceModel.Grpc.Emit/1.20.0": {
+        "runtime": {
+          "lib/net10.0/ServiceModel.Grpc.Descriptions.dll": {
+            "assemblyVersion": "1.20.0.0",
+            "fileVersion": "1.20.0.0"
+          },
+          "lib/net10.0/ServiceModel.Grpc.Emit.dll": {
+            "assemblyVersion": "1.20.0.0",
+            "fileVersion": "1.20.0.0"
+          }
+        }
+      },
+      "ServiceModel.Grpc.MessagePackMarshaller/1.20.0": {
+        "dependencies": {
+          "MessagePack": "3.1.4",
+          "ServiceModel.Grpc": "1.20.0"
+        },
+        "runtime": {
+          "lib/net10.0/ServiceModel.Grpc.MessagePackMarshaller.dll": {
+            "assemblyVersion": "1.20.0.0",
+            "fileVersion": "1.20.0.0"
+          }
+        }
+      },
+      "Swashbuckle.AspNetCore/10.0.1": {
+        "dependencies": {
+          "Swashbuckle.AspNetCore.Swagger": "10.0.1",
+          "Swashbuckle.AspNetCore.SwaggerGen": "10.0.1",
+          "Swashbuckle.AspNetCore.SwaggerUI": "10.0.1"
+        }
+      },
+      "Swashbuckle.AspNetCore.Swagger/10.0.1": {
+        "dependencies": {
+          "Microsoft.OpenApi": "2.3.0"
+        },
+        "runtime": {
+          "lib/net10.0/Swashbuckle.AspNetCore.Swagger.dll": {
+            "assemblyVersion": "10.0.1.0",
+            "fileVersion": "10.0.1.1964"
+          }
+        }
+      },
+      "Swashbuckle.AspNetCore.SwaggerGen/10.0.1": {
+        "dependencies": {
+          "Swashbuckle.AspNetCore.Swagger": "10.0.1"
+        },
+        "runtime": {
+          "lib/net10.0/Swashbuckle.AspNetCore.SwaggerGen.dll": {
+            "assemblyVersion": "10.0.1.0",
+            "fileVersion": "10.0.1.1964"
+          }
+        }
+      },
+      "Swashbuckle.AspNetCore.SwaggerUI/10.0.1": {
+        "runtime": {
+          "lib/net10.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {
+            "assemblyVersion": "10.0.1.0",
+            "fileVersion": "10.0.1.1964"
           }
         }
       },
@@ -943,10 +1051,22 @@
       "Market.Application/1.0.0": {
         "dependencies": {
           "Market.Domain": "1.0.0",
-          "MediatR": "13.1.0"
+          "MediatR": "13.1.0",
+          "Microsoft.EntityFrameworkCore": "10.0.0"
         },
         "runtime": {
           "Market.Application.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Market.Contracts/1.0.0": {
+        "dependencies": {
+          "MessagePack": "3.1.4"
+        },
+        "runtime": {
+          "Market.Contracts.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -1295,12 +1415,12 @@
       "path": "microsoft.net.stringtools/17.14.28",
       "hashPath": "microsoft.net.stringtools.17.14.28.nupkg.sha512"
     },
-    "Microsoft.OpenApi/2.0.0": {
+    "Microsoft.OpenApi/2.3.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-GGYLfzV/G/ct80OZ45JxnWP7NvMX1BCugn/lX7TH5o0lcVaviavsLMTxmFV2AybXWjbi3h6FF1vgZiTK6PXndw==",
-      "path": "microsoft.openapi/2.0.0",
-      "hashPath": "microsoft.openapi.2.0.0.nupkg.sha512"
+      "sha512": "sha512-5RZpjyt0JMmoc/aEgY9c1vE5pusdDGvkPl9qKIy9KFbRiIXD+w7gBJxX+unSjzzOcfgRoYxnO4okZyqDAL2WEw==",
+      "path": "microsoft.openapi/2.3.0",
+      "hashPath": "microsoft.openapi.2.3.0.nupkg.sha512"
     },
     "Mono.TextTemplating/3.0.0": {
       "type": "package",
@@ -1329,6 +1449,69 @@
       "sha512": "sha512-E2+uSWxSB8LdsUVwPaqRWOcGOP92biry2JEwc0KJMdLJF+aZdczeIdEXVwEyv4nSVMQJH0o8tLhyAMiR6VF0lw==",
       "path": "npgsql.entityframeworkcore.postgresql/10.0.0",
       "hashPath": "npgsql.entityframeworkcore.postgresql.10.0.0.nupkg.sha512"
+    },
+    "ServiceModel.Grpc/1.20.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-qBHwoiAMf25Q3jmoZfDSkUa0JayauEyOd6UdjBbKlIfu/q7JKfupUM1ZHzS8SG02uWy1Y4eC3pk6Hj+C/+vHIw==",
+      "path": "servicemodel.grpc/1.20.0",
+      "hashPath": "servicemodel.grpc.1.20.0.nupkg.sha512"
+    },
+    "ServiceModel.Grpc.AspNetCore/1.20.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/BiBJ3CJU8lqyiw0azr3xuEilBWpl6+XEhcQesfOB2GdtNTcu2Op8E3jkz31sLQwdVPb5TODULeDu2GaA+lwnQ==",
+      "path": "servicemodel.grpc.aspnetcore/1.20.0",
+      "hashPath": "servicemodel.grpc.aspnetcore.1.20.0.nupkg.sha512"
+    },
+    "ServiceModel.Grpc.Core/1.20.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-wF14iA2191e+OhwFTaTyz0rKgYbwcKr6rZlo1Y36VhxkGULp07nmUXe5CSwf/9nmOeHpzarMFxiLjD0470fypA==",
+      "path": "servicemodel.grpc.core/1.20.0",
+      "hashPath": "servicemodel.grpc.core.1.20.0.nupkg.sha512"
+    },
+    "ServiceModel.Grpc.Emit/1.20.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-uwx6/7mQfGBdGkA99otAIESj+41vGMdOXm9VuEfmsEvzHMTZ7o0SCMUr3j82ON1u8/l+40HeJ6mjgPnTQ2YmzA==",
+      "path": "servicemodel.grpc.emit/1.20.0",
+      "hashPath": "servicemodel.grpc.emit.1.20.0.nupkg.sha512"
+    },
+    "ServiceModel.Grpc.MessagePackMarshaller/1.20.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hneTw0y4rAw0zIqXypTa6gr2zEm9VMJh4vA044xilLgWSzB0DclNVfIJyvgOjECU+NfaA5UToIs+5mHxJObjPg==",
+      "path": "servicemodel.grpc.messagepackmarshaller/1.20.0",
+      "hashPath": "servicemodel.grpc.messagepackmarshaller.1.20.0.nupkg.sha512"
+    },
+    "Swashbuckle.AspNetCore/10.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-177+JNAV5TNvy8gLCdrcWBY9n2jdkxiHQDY4vhaExeqUpKrOqDatCcm/kW3kze60GqfnZ2NobD/IKiAPOL+CEw==",
+      "path": "swashbuckle.aspnetcore/10.0.1",
+      "hashPath": "swashbuckle.aspnetcore.10.0.1.nupkg.sha512"
+    },
+    "Swashbuckle.AspNetCore.Swagger/10.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HJYFSP18YF1Z6LCwunL+v8wuZUzzvcjarB8AJna/NVVIpq11FH9BW/D/6abwigu7SsKRbisStmk8xu2mTsxxHg==",
+      "path": "swashbuckle.aspnetcore.swagger/10.0.1",
+      "hashPath": "swashbuckle.aspnetcore.swagger.10.0.1.nupkg.sha512"
+    },
+    "Swashbuckle.AspNetCore.SwaggerGen/10.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-vMMBDiTC53KclPs1aiedRZnXkoI2ZgF5/JFr3Dqr8KT7wvIbA/MwD+ormQ4qf25gN5xCrJbmz/9/Z3RrpSofMA==",
+      "path": "swashbuckle.aspnetcore.swaggergen/10.0.1",
+      "hashPath": "swashbuckle.aspnetcore.swaggergen.10.0.1.nupkg.sha512"
+    },
+    "Swashbuckle.AspNetCore.SwaggerUI/10.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-a2eLI/fCxJ3WH+H1hr7Q2T82ZBk20FfqYBEZ9hOr3f+426ZUfGU2LxYWzOJrf5/4y6EKShmWpjJG01h3Rc+l6Q==",
+      "path": "swashbuckle.aspnetcore.swaggerui/10.0.1",
+      "hashPath": "swashbuckle.aspnetcore.swaggerui.10.0.1.nupkg.sha512"
     },
     "System.CodeDom/9.0.0": {
       "type": "package",
@@ -1429,6 +1612,11 @@
       "hashPath": "system.windows.extensions.9.0.0.nupkg.sha512"
     },
     "Market.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Market.Contracts/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

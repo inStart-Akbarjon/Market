@@ -1,5 +1,6 @@
 using Market.Application.Interfaces.Repositories;
 using Market.Application.DTOs.Response.Product;
+using Microsoft.EntityFrameworkCore;
 using Market.Application.Mappers;
 using MediatR;
 
@@ -17,7 +18,7 @@ public class GetAllProductsQueryHandler()
     
     public async Task<List<GetAllProductsResponse>> Handle(GetAllProductsQuery request, CancellationToken cancellationToken)
     {
-        var products = await _productRepository.GetAllAsync();
+        var products = await _productRepository.GetAll().ToListAsync();
         var response = ProductMappers.ToGetAllProductsResponse(products);
         return response;
     }

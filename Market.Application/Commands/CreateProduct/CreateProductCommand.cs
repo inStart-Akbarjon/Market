@@ -1,5 +1,4 @@
-﻿using Market.Application.DTOs.Request.Product;
-using Market.Application.DTOs.Response.Product;
+﻿using Market.Application.DTOs.Response.Product;
 using Market.Domain.Models;
 using MediatR;
 

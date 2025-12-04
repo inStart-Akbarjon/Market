@@ -28,14 +28,15 @@
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
         <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="10.0.0" />
+        <PackageReference Include="ServiceModel.Grpc.AspNetCore" Version="1.20.0" />
+        <PackageReference Include="ServiceModel.Grpc.MessagePackMarshaller" Version="1.20.0" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="10.0.1" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\Market.Application\Market.Application.csproj" />
+      <ProjectReference Include="..\Market.Contracts\Market.Contracts.csproj" />
       <ProjectReference Include="..\Market.Infrastructure\Market.Infrastructure.csproj" />
-    </ItemGroup>
-    <ItemGroup>
-        <Protobuf Include="Protos/product.proto" GrpcServices="Server" />
     </ItemGroup>
 
 </Project>

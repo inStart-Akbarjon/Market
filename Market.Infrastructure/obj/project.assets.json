@@ -292,7 +292,8 @@
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
           "Market.Domain": "1.0.0",
-          "MediatR": "13.1.0"
+          "MediatR": "13.1.0",
+          "Microsoft.EntityFrameworkCore": "10.0.0"
         },
         "compile": {
           "bin/placeholder/Market.Application.dll": {}
