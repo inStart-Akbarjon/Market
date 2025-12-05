@@ -1,5 +1,8 @@
-﻿namespace Market.Contracts.Models.Request;
+﻿using MessagePack;
 
+namespace Market.Contracts.Models.Request;
+
+[MessagePackObject]
 public class GetProductRequest
 {
     
