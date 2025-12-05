@@ -1,6 +1,9 @@
 ﻿using Market.Application.DTOs.Request.Product;
 using Market.Application.DTOs.Response.Product;
+using Market.Contracts.Models.Response;
 using Market.Domain.Models;
+using DeleteProductResponse = Market.Application.DTOs.Response.Product.DeleteProductResponse;
+using UpdateProductResponse = Market.Application.DTOs.Response.Product.UpdateProductResponse;
 
 namespace Market.Application.Mappers;
 

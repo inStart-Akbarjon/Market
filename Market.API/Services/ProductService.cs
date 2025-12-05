@@ -1,19 +1,20 @@
-﻿using Grpc.Core;
+﻿using DeleteProductResponse = Market.Contracts.Models.Response.DeleteProductResponse;
+using UpdateProductResponse = Market.Contracts.Models.Response.UpdateProductResponse;
+using UpdateProductRequest = Market.Contracts.Models.Request.UpdateProductRequest;
+using DeleteProductRequest = Market.Contracts.Models.Request.DeleteProductRequest;
 using Market.Application.Commands.CreateProduct;
 using Market.Application.Commands.DeleteProduct;
 using Market.Application.Commands.UpdateProduct;
-using Market.Application.DTOs.Request.Product;
-using Market.Application.Mappers;
 using Market.Application.Queries.GetAllProducts;
 using Market.Application.Queries.GetProductById;
+using Market.Application.DTOs.Request.Product;
 using Market.Contracts.Interfaces.Services;
-using Market.Contracts.Models.Request;
 using Market.Contracts.Models.Response;
+using Market.Contracts.Models.Request;
+using Market.Application.Mappers;
+using Grpc.Core;
+using Market.Application.Mappers.ServiceMappers;
 using MediatR;
-using DeleteProductRequest = Market.Contracts.Models.Request.DeleteProductRequest;
-using DeleteProductResponse = Market.Contracts.Models.Response.DeleteProductResponse;
-using UpdateProductRequest = Market.Contracts.Models.Request.UpdateProductRequest;
-using UpdateProductResponse = Market.Contracts.Models.Response.UpdateProductResponse;
 
 namespace Market.API.Services;
 
@@ -30,16 +31,8 @@ public class ProductService : IProductService
     {
          var query = new GetAllProductsQuery();
          var products = await _mediator.Send(query);
-         var response = products.Select(p => new GetProductResponse()
-         {
-             Id = p.Id,
-             Title = p.Title,
-             Description = p.Description,
-             Price = p.Price,
-             CreatedAt = p.CreatedAt
-         }).ToList();
          
-         return response;
+         return ProductServiceMappers.ToGetProductsResponse(products);
     }
 
     public async Task<GetProductByIdResponse> GetProductById(GetProductByIdRequest request)
@@ -52,14 +45,7 @@ public class ProductService : IProductService
              throw new RpcException(new Status(StatusCode.NotFound,$"Product with id {request.Id} not found"));
          }
 
-         return new GetProductByIdResponse()
-         {
-             Id = res.Id,
-             Title = res.Title,
-             Description = res.Description,
-             Price = res.Price,
-             CreatedAt = res.CreatedAt
-         };
+         return ProductServiceMappers.ToGetByIdProductResponse(res);
     }
 
     public async Task<CreateProductResponse> CreateProduct(CreateProductRequest request)
@@ -74,14 +60,7 @@ public class ProductService : IProductService
         var command = new CreateProductCommand(product);
         var res = await _mediator.Send(command);
 
-        return await Task.FromResult(new CreateProductResponse()
-        {
-            Id = res.Id,
-            Title = res.Title,
-            Description = res.Description,
-            Price = res.Price,
-            CreatedAt = res.CreatedAt,
-        });
+        return ProductServiceMappers.ToAddProductResponse(res);
     }
 
     public async Task<UpdateProductResponse> UpdateProduct(UpdateProductRequest request)
@@ -102,17 +81,8 @@ public class ProductService : IProductService
          {
              throw new RpcException(new Status(StatusCode.NotFound,$"Product with id {request.Id} not found"));
          }
-         else
-         {
-             return await Task.FromResult(new UpdateProductResponse()
-             {
-                 Id = res.Id,
-                 Title = res.Title,
-                 Description = res.Description,
-                 Price = res.Price,
-                 CreatedAt = res.CreatedAt,
-             });
-         }
+        
+         return ProductServiceMappers.ToUpdateProductResponse(res);
          
     }
 
@@ -126,6 +96,6 @@ public class ProductService : IProductService
              throw new RpcException(new Status(StatusCode.NotFound,$"Product with id {request.Id} not found"));
          }
          
-         return await Task.FromResult(new DeleteProductResponse() {});
+         return ProductServiceMappers.ToDeleteProductResponse(res);
     }
 }

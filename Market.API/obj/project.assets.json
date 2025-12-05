@@ -1830,6 +1830,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
+          "Market.Contracts": "1.0.0",
           "Market.Domain": "1.0.0",
           "MediatR": "13.1.0",
           "Microsoft.EntityFrameworkCore": "10.0.0"

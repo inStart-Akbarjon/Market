@@ -20,6 +20,7 @@ public class GetAllProductsQueryHandler()
     {
         var products = await _productRepository.GetAll().ToListAsync();
         var response = ProductMappers.ToGetAllProductsResponse(products);
+        
         return response;
     }
 }
