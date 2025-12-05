@@ -14,3 +14,5 @@ C:\Users\Akbarjon\RiderProjects\Market.API\Market.Application\obj\Debug\net10.0\
 C:\Users\Akbarjon\RiderProjects\Market.API\Market.Application\obj\Debug\net10.0\Market.Application.pdb
 C:\Users\Akbarjon\RiderProjects\Market.API\Market.Application\obj\Debug\net10.0\ref\Market.Application.dll
 C:\Users\Akbarjon\RiderProjects\Market.API\Market.Application\obj\Debug\net10.0\Market.Application.sourcelink.json
+C:\Users\Akbarjon\RiderProjects\Market.API\Market.Application\bin\Debug\net10.0\Market.Contracts.dll
+C:\Users\Akbarjon\RiderProjects\Market.API\Market.Application\bin\Debug\net10.0\Market.Contracts.pdb

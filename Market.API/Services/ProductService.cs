@@ -2,6 +2,7 @@
 using UpdateProductResponse = Market.Contracts.Models.Response.UpdateProductResponse;
 using UpdateProductRequest = Market.Contracts.Models.Request.UpdateProductRequest;
 using DeleteProductRequest = Market.Contracts.Models.Request.DeleteProductRequest;
+using Market.Application.Mappers.ServiceMappers;
 using Market.Application.Commands.CreateProduct;
 using Market.Application.Commands.DeleteProduct;
 using Market.Application.Commands.UpdateProduct;
@@ -13,7 +14,6 @@ using Market.Contracts.Models.Response;
 using Market.Contracts.Models.Request;
 using Market.Application.Mappers;
 using Grpc.Core;
-using Market.Application.Mappers.ServiceMappers;
 using MediatR;
 
 namespace Market.API.Services;

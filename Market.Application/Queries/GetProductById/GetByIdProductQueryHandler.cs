@@ -1,5 +1,5 @@
-﻿using Market.Application.DTOs.Response.Product;
-using Market.Application.Interfaces.Repositories;
+﻿using Market.Application.Interfaces.Repositories;
+using Market.Application.DTOs.Response.Product;
 using Market.Application.Mappers;
 using MediatR;
 
