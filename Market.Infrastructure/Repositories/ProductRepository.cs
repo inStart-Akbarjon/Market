@@ -5,42 +5,38 @@ using Market.Domain.Models;
 
 namespace Market.Infrastructure.Repositories;
 
-public class ProductRepository : IProductRepository
+public class ProductRepository(AppDbContext context) : IProductRepository
 {
-    private readonly AppDbContext _context;
-    
-    public ProductRepository(AppDbContext context)
+    public IQueryable<Product> GetAllAsync()
     {
-        _context = context;
-    }
-    public IQueryable<Product> GetAll()
-    {
-        return _context.Products.AsQueryable().AsNoTracking();
+        return context.Products.Where(p => 
+            p.DeletedAt == null 
+            && p.OpenedAt <= DateTime.UtcNow
+            && p.ClosedAt > DateTime.UtcNow
+        ).AsQueryable().AsNoTracking();
     }
 
-    public async Task<Product?> GetByIdAsync(int id)
+    public async Task<Product?> GetByIdAsync(int id, CancellationToken cancellationToken =  default)
     {
-        var product = await _context.Products.FirstOrDefaultAsync(p => p.Id == id);
-        return product;
+        return await context.Products.Where(p => 
+            p.DeletedAt == null 
+            && p.OpenedAt <= DateTime.UtcNow
+            && p.ClosedAt > DateTime.UtcNow
+        ).FirstOrDefaultAsync(p => p.Id == id, cancellationToken);
     }
 
-    public async Task CreateAsync(Product product)
+    public async Task CreateAsync(Product product, CancellationToken cancellationToken = default)
     {
-        await _context.Products.AddAsync(product);
+        await context.Products.AddAsync(product, cancellationToken);
     }
 
-    public void UpdateAsync(Product product)
+    public void UpdateAsync(Product product, CancellationToken cancellationToken  = default)
     {
-        _context.Products.Update(product);
-    }
-
-    public void DeleteAsync(Product product)
-    {
-        _context.Products.Remove(product);
+        context.Products.Update(product);
     }
     
-    public async Task SaveChangesAsync()
+    public async Task SaveChangesAsync(CancellationToken cancellationToken  = default)
     {
-        await _context.SaveChangesAsync();
+        await context.SaveChangesAsync(cancellationToken);
     }
 }

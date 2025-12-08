@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Ql+3H2ny2zs=",
+  "dgSpecHash": "dJLXmipEv2E=",
   "success": true,
   "projectFilePath": "C:\\Users\\Akbarjon\\RiderProjects\\Market.API\\Market.API\\Market.API.csproj",
   "expectedPackageFiles": [
@@ -15,6 +15,12 @@
     "C:\\Users\\Akbarjon\\.nuget\\packages\\grpc.net.common\\2.71.0\\grpc.net.common.2.71.0.nupkg.sha512",
     "C:\\Users\\Akbarjon\\.nuget\\packages\\grpc.tools\\2.76.0\\grpc.tools.2.76.0.nupkg.sha512",
     "C:\\Users\\Akbarjon\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\Akbarjon\\.nuget\\packages\\magiconion\\7.0.7\\magiconion.7.0.7.nupkg.sha512",
+    "C:\\Users\\Akbarjon\\.nuget\\packages\\magiconion.abstractions\\7.0.7\\magiconion.abstractions.7.0.7.nupkg.sha512",
+    "C:\\Users\\Akbarjon\\.nuget\\packages\\magiconion.client\\7.0.7\\magiconion.client.7.0.7.nupkg.sha512",
+    "C:\\Users\\Akbarjon\\.nuget\\packages\\magiconion.serialization.messagepack\\7.0.7\\magiconion.serialization.messagepack.7.0.7.nupkg.sha512",
+    "C:\\Users\\Akbarjon\\.nuget\\packages\\magiconion.server\\7.0.7\\magiconion.server.7.0.7.nupkg.sha512",
+    "C:\\Users\\Akbarjon\\.nuget\\packages\\magiconion.shared\\7.0.7\\magiconion.shared.7.0.7.nupkg.sha512",
     "C:\\Users\\Akbarjon\\.nuget\\packages\\mediatr\\13.1.0\\mediatr.13.1.0.nupkg.sha512",
     "C:\\Users\\Akbarjon\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
     "C:\\Users\\Akbarjon\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\11.1.0\\mediatr.extensions.microsoft.dependencyinjection.11.1.0.nupkg.sha512",
@@ -57,6 +63,7 @@
     "C:\\Users\\Akbarjon\\.nuget\\packages\\microsoft.net.stringtools\\17.14.28\\microsoft.net.stringtools.17.14.28.nupkg.sha512",
     "C:\\Users\\Akbarjon\\.nuget\\packages\\microsoft.openapi\\2.3.0\\microsoft.openapi.2.3.0.nupkg.sha512",
     "C:\\Users\\Akbarjon\\.nuget\\packages\\mono.texttemplating\\3.0.0\\mono.texttemplating.3.0.0.nupkg.sha512",
+    "C:\\Users\\Akbarjon\\.nuget\\packages\\multicaster\\2.1.1\\multicaster.2.1.1.nupkg.sha512",
     "C:\\Users\\Akbarjon\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\Akbarjon\\.nuget\\packages\\npgsql\\10.0.0\\npgsql.10.0.0.nupkg.sha512",
     "C:\\Users\\Akbarjon\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\10.0.0\\npgsql.entityframeworkcore.postgresql.10.0.0.nupkg.sha512",

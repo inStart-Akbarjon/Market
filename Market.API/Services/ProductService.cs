@@ -1,101 +1,57 @@
-﻿using DeleteProductResponse = Market.Contracts.Models.Response.DeleteProductResponse;
-using UpdateProductResponse = Market.Contracts.Models.Response.UpdateProductResponse;
-using UpdateProductRequest = Market.Contracts.Models.Request.UpdateProductRequest;
-using DeleteProductRequest = Market.Contracts.Models.Request.DeleteProductRequest;
-using Market.Application.Mappers.ServiceMappers;
-using Market.Application.Commands.CreateProduct;
-using Market.Application.Commands.DeleteProduct;
-using Market.Application.Commands.UpdateProduct;
-using Market.Application.Queries.GetAllProducts;
-using Market.Application.Queries.GetProductById;
-using Market.Application.DTOs.Request.Product;
+﻿using Market.Application.CQRS.Product.Commands.CreateProduct;
+using Market.Application.CQRS.Product.Commands.DeleteProduct;
+using Market.Application.CQRS.Product.Commands.UpdateProduct;
+using Market.Application.CQRS.Product.Queries.GetAllProducts;
+using Market.Application.CQRS.Product.Queries.GetProductById;
+using Market.Contracts.Models.Product.Response;
+using Market.Contracts.Models.Product.Request;
 using Market.Contracts.Interfaces.Services;
-using Market.Contracts.Models.Response;
-using Market.Contracts.Models.Request;
-using Market.Application.Mappers;
+using MagicOnion.Server;
+using MagicOnion;
 using Grpc.Core;
 using MediatR;
 
 namespace Market.API.Services;
 
-public class ProductService : IProductService
+public class ProductService(IMediator mediator) : ServiceBase<IProductService>, IProductService
 {
-    private readonly IMediator _mediator;
-
-    public ProductService(IMediator mediator)
-    {
-        _mediator = mediator;
-    }
-
-    public async Task<List<GetProductResponse>> GetProduct(GetProductRequest request)
+    
+    public async UnaryResult<List<GetAllProductsResponse>> GetAllProducts(GetProductRequest request)
     {
          var query = new GetAllProductsQuery();
-         var products = await _mediator.Send(query);
+         var products = await mediator.Send(query);
          
-         return ProductServiceMappers.ToGetProductsResponse(products);
+         return products;
     }
 
-    public async Task<GetProductByIdResponse> GetProductById(GetProductByIdRequest request)
+    public async UnaryResult<GetProductByIdResponse?> GetProductById(GetProductByIdRequest request)
     {
          var query = new GetByIdProductQuery(request.Id);
-         var res = await _mediator.Send(query);
+         var res = await mediator.Send(query);
 
-         if (res == null)
-         {
-             throw new RpcException(new Status(StatusCode.NotFound,$"Product with id {request.Id} not found"));
-         }
-
-         return ProductServiceMappers.ToGetByIdProductResponse(res);
+         return res ?? throw new RpcException(new Status(StatusCode.NotFound,$"Product with id {request.Id} not found"));
     }
 
-    public async Task<CreateProductResponse> CreateProduct(CreateProductRequest request)
+    public async UnaryResult<CreateProductResponse> CreateProduct(CreateProductRequest request)
     {
-        var product = ProductMappers.ToAddProductEntity(new AddProductRequest()
-        {
-            Title = request.Title,
-            Description = request.Description,
-            Price = request.Price
-        });
-        
-        var command = new CreateProductCommand(product);
-        var res = await _mediator.Send(command);
-
-        return ProductServiceMappers.ToAddProductResponse(res);
+        var command = new CreateProductCommand(request.Title, request.Description, request.Price, request.OpenedAt, request.ClosedAt);
+        var res = await mediator.Send(command);
+        return res;
     }
 
-    public async Task<UpdateProductResponse> UpdateProduct(UpdateProductRequest request)
+    public async UnaryResult<UpdateProductResponse> UpdateProduct(int id, UpdateProductRequest request)
     {
-         var product = new Domain.Models.Product()
-         {
-             Id = request.Id,
-             Title = request.Title,
-             Description = request.Description,
-             Price = request.Price,
-         };
-         
-         var command = new UpdateProductCommand(product);
-         
-         var res = await _mediator.Send(command);
+         var command = new UpdateProductCommand(id, request.Title, request.Description, request.Price);
+         var res = await mediator.Send(command);
 
-         if (res == null)
-         {
-             throw new RpcException(new Status(StatusCode.NotFound,$"Product with id {request.Id} not found"));
-         }
-        
-         return ProductServiceMappers.ToUpdateProductResponse(res);
-         
+         return res ?? throw new RpcException(new Status(StatusCode.NotFound,$"Product with id {request.Id} not found"));
     }
 
-    public async Task<DeleteProductResponse> DeleteProduct(DeleteProductRequest request)
+    public async UnaryResult<DeleteProductResponse> DeleteProduct(int id, DeleteProductRequest request)
     {
          var command = new DeleteProductCommand(request.Id);
-         var res = await _mediator.Send(command);
+         var res = await mediator.Send(command);
 
-         if (res == null)
-         {
-             throw new RpcException(new Status(StatusCode.NotFound,$"Product with id {request.Id} not found"));
-         }
-         
-         return ProductServiceMappers.ToDeleteProductResponse(res);
+         return res ?? throw new RpcException(new Status(StatusCode.NotFound,$"Product with id {request.Id} not found"));
     }
 }

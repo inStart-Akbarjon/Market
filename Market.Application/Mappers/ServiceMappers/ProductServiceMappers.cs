@@ -1,26 +1,19 @@
-﻿using Market.Application.DTOs.Response.Product;
-using Market.Contracts.Models.Response;
+﻿using Market.Application.Interfaces.Mappers;
+using Market.Contracts.Models.Product.Response;
 using Market.Domain.Models;
-using DeleteProductResponse = Market.Contracts.Models.Response.DeleteProductResponse;
-using UpdateProductResponse = Market.Contracts.Models.Response.UpdateProductResponse;
+using DeleteProductResponse = Market.Contracts.Models.Product.Response.DeleteProductResponse;
+using UpdateProductResponse = Market.Contracts.Models.Product.Response.UpdateProductResponse;
 
 namespace Market.Application.Mappers.ServiceMappers;
 
-public class ProductServiceMappers
+public class ProductServiceMappers : IProductServiceMappers
 {
-    public static List<GetProductResponse> ToGetProductsResponse(List<GetAllProductsResponse> products)
+    public List<GetAllProductsResponse> ToGetAllProductsResponse(List<GetAllProductsResponse> products)
     {
-        return products.Select(product => new GetProductResponse()
-        {
-            Id = product.Id,
-            Title = product.Title,
-            Description = product.Description,
-            Price = product.Price,
-            CreatedAt = product.CreatedAt
-        }).ToList();
+        return new List<GetAllProductsResponse>();
     }
     
-    public static GetProductByIdResponse ToGetByIdProductResponse(GetByIdProductResponse product)
+    public GetProductByIdResponse ToGetByIdProductResponse(Product product)
     {
         return new GetProductByIdResponse()
         {
@@ -29,34 +22,30 @@ public class ProductServiceMappers
             Description = product.Description,
             Price = product.Price,
             CreatedAt = product.CreatedAt,
+            UpdatedAt = product.UpdatedAt,
+            DeletedAt = product.DeletedAt,
+            OpenedAt = product.OpenedAt,
+            ClosedAt = product.ClosedAt,
         };
     }
     
-    public static CreateProductResponse ToAddProductResponse(AddProductResponse product)
+    public CreateProductResponse ToAddProductResponse(CreateProductResponse product)
     {
         return new CreateProductResponse()
         {
             Id = product.Id,
-            Title = product.Title,
-            Description = product.Description,
-            Price = product.Price,
-            CreatedAt = product.CreatedAt,
         };
     }
     
-    public static UpdateProductResponse ToUpdateProductResponse(Market.Application.DTOs.Response.Product.UpdateProductResponse product)
+    public UpdateProductResponse ToUpdateProductResponse(Product product)
     {
         return new UpdateProductResponse()
         {
             Id = product.Id,
-            Title = product.Title,
-            Description = product.Description,
-            Price = product.Price,
-            CreatedAt = product.CreatedAt,
         };
     }
     
-    public static DeleteProductResponse ToDeleteProductResponse(Market.Application.DTOs.Response.Product.DeleteProductResponse product)
+    public DeleteProductResponse ToDeleteProductResponse(Product product)
     {
         return new DeleteProductResponse() {};
     }

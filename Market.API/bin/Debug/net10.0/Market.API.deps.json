@@ -11,6 +11,8 @@
           "Grpc.AspNetCore": "2.71.0",
           "Grpc.Net.ClientFactory": "2.71.0",
           "Grpc.Net.Common": "2.71.0",
+          "MagicOnion": "7.0.7",
+          "MagicOnion.Server": "7.0.7",
           "Market.Application": "1.0.0",
           "Market.Contracts": "1.0.0",
           "Market.Infrastructure": "1.0.0",
@@ -123,6 +125,89 @@
           "lib/net6.0/Humanizer.dll": {
             "assemblyVersion": "2.14.0.0",
             "fileVersion": "2.14.1.48190"
+          }
+        }
+      },
+      "MagicOnion/7.0.7": {
+        "dependencies": {
+          "Grpc.AspNetCore.Server": "2.71.0",
+          "Grpc.Core.Api": "2.71.0",
+          "Grpc.Net.Client": "2.71.0",
+          "MagicOnion.Client": "7.0.7",
+          "MagicOnion.Server": "7.0.7",
+          "MessagePack": "3.1.4",
+          "Multicaster": "2.1.1"
+        }
+      },
+      "MagicOnion.Abstractions/7.0.7": {
+        "dependencies": {
+          "Grpc.Core.Api": "2.71.0",
+          "MessagePack": "3.1.4"
+        },
+        "runtime": {
+          "lib/net8.0/MagicOnion.Abstractions.dll": {
+            "assemblyVersion": "7.0.7.0",
+            "fileVersion": "7.0.7.0"
+          }
+        }
+      },
+      "MagicOnion.Client/7.0.7": {
+        "dependencies": {
+          "Grpc.Core.Api": "2.71.0",
+          "Grpc.Net.Client": "2.71.0",
+          "MagicOnion.Abstractions": "7.0.7",
+          "MagicOnion.Serialization.MessagePack": "7.0.7",
+          "MagicOnion.Shared": "7.0.7",
+          "MessagePack": "3.1.4"
+        },
+        "runtime": {
+          "lib/net9.0/MagicOnion.Client.dll": {
+            "assemblyVersion": "7.0.7.0",
+            "fileVersion": "7.0.7.0"
+          }
+        }
+      },
+      "MagicOnion.Serialization.MessagePack/7.0.7": {
+        "dependencies": {
+          "Grpc.Core.Api": "2.71.0",
+          "MagicOnion.Abstractions": "7.0.7",
+          "MessagePack": "3.1.4"
+        },
+        "runtime": {
+          "lib/net8.0/MagicOnion.Serialization.MessagePack.dll": {
+            "assemblyVersion": "7.0.7.0",
+            "fileVersion": "7.0.7.0"
+          }
+        }
+      },
+      "MagicOnion.Server/7.0.7": {
+        "dependencies": {
+          "Grpc.AspNetCore.Server": "2.71.0",
+          "Grpc.Core.Api": "2.71.0",
+          "MagicOnion.Abstractions": "7.0.7",
+          "MagicOnion.Serialization.MessagePack": "7.0.7",
+          "MagicOnion.Shared": "7.0.7",
+          "MessagePack": "3.1.4",
+          "Multicaster": "2.1.1"
+        },
+        "runtime": {
+          "lib/net9.0/MagicOnion.Server.dll": {
+            "assemblyVersion": "7.0.7.0",
+            "fileVersion": "7.0.7.0"
+          }
+        }
+      },
+      "MagicOnion.Shared/7.0.7": {
+        "dependencies": {
+          "Grpc.Core.Api": "2.71.0",
+          "MagicOnion.Abstractions": "7.0.7",
+          "MagicOnion.Serialization.MessagePack": "7.0.7",
+          "MessagePack": "3.1.4"
+        },
+        "runtime": {
+          "lib/net8.0/MagicOnion.Shared.dll": {
+            "assemblyVersion": "7.0.7.0",
+            "fileVersion": "7.0.7.0"
           }
         }
       },
@@ -771,6 +856,14 @@
           }
         }
       },
+      "Multicaster/2.1.1": {
+        "runtime": {
+          "lib/net9.0/Cysharp.Runtime.Multicaster.dll": {
+            "assemblyVersion": "2.1.1.0",
+            "fileVersion": "2.1.1.0"
+          }
+        }
+      },
       "Newtonsoft.Json/13.0.3": {
         "runtime": {
           "lib/net6.0/Newtonsoft.Json.dll": {
@@ -1064,6 +1157,7 @@
       },
       "Market.Contracts/1.0.0": {
         "dependencies": {
+          "MagicOnion": "7.0.7",
           "MessagePack": "3.1.4"
         },
         "runtime": {
@@ -1084,7 +1178,8 @@
       "Market.Infrastructure/1.0.0": {
         "dependencies": {
           "Market.Application": "1.0.0",
-          "Microsoft.EntityFrameworkCore": "10.0.0"
+          "Microsoft.EntityFrameworkCore": "10.0.0",
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "10.0.0"
         },
         "runtime": {
           "Market.Infrastructure.dll": {
@@ -1170,6 +1265,48 @@
       "sha512": "sha512-lQKvtaTDOXnoVJ20ibTuSIOf2i0uO0MPbDhd1jm238I+U/2ZnRENj0cktKZhtchBMtCUSRQ5v4xBCUbKNmyVMw==",
       "path": "humanizer.core/2.14.1",
       "hashPath": "humanizer.core.2.14.1.nupkg.sha512"
+    },
+    "MagicOnion/7.0.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-J4/z8MWvfpRi7+TbrrIcB3vvVBQTpWf5G14nEVKogbSBE10MYJn/SIBHvhyMAwlTJGPqUJ6P4Q1JF4HTYrTvpg==",
+      "path": "magiconion/7.0.7",
+      "hashPath": "magiconion.7.0.7.nupkg.sha512"
+    },
+    "MagicOnion.Abstractions/7.0.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-S7Cafrs99NRM07G0WYev/FSNrGG+G10AQNXUeuaJ54XRFSkcnxs1Cfm4GKGkTz/tmIVsLatWcFu5aPnBH0cCkA==",
+      "path": "magiconion.abstractions/7.0.7",
+      "hashPath": "magiconion.abstractions.7.0.7.nupkg.sha512"
+    },
+    "MagicOnion.Client/7.0.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fvT/qULiVdlOjtgUXvSx27bdjGN1M4gulCKAfi12q97MvD9OVcbG/99YepPuj0UYx6mjDwg4QW8GVkfAjETY3w==",
+      "path": "magiconion.client/7.0.7",
+      "hashPath": "magiconion.client.7.0.7.nupkg.sha512"
+    },
+    "MagicOnion.Serialization.MessagePack/7.0.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HDPpG9kLPsK3o7cKs2Zyn5A4yg8TG+U2D66kr0wcs+/SVEoPq1pa6p6lr2SlmDPMNP048bzho9Ow39J7bOwnDA==",
+      "path": "magiconion.serialization.messagepack/7.0.7",
+      "hashPath": "magiconion.serialization.messagepack.7.0.7.nupkg.sha512"
+    },
+    "MagicOnion.Server/7.0.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-nXZ0Z3m2FgK3luHr7jL0pcTCoY80Q97/MMAsdTDahyrvh6p1FOPpTLjn1eEaQ/7U27NTQp79eDCBaBq1us2Ysg==",
+      "path": "magiconion.server/7.0.7",
+      "hashPath": "magiconion.server.7.0.7.nupkg.sha512"
+    },
+    "MagicOnion.Shared/7.0.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-KbtuuDvXtOVBhohFl6wutzgVXv73pE7w2DB0UzGzjnOlS9KdyDqPWNAknXSb5OkYTGQFSuxhs67/elLMbYkNoA==",
+      "path": "magiconion.shared/7.0.7",
+      "hashPath": "magiconion.shared.7.0.7.nupkg.sha512"
     },
     "MediatR/13.1.0": {
       "type": "package",
@@ -1429,6 +1566,13 @@
       "sha512": "sha512-YqueG52R/Xej4VVbKuRIodjiAhV0HR/XVbLbNrJhCZnzjnSjgMJ/dCdV0akQQxavX6hp/LC6rqLGLcXeQYU7XA==",
       "path": "mono.texttemplating/3.0.0",
       "hashPath": "mono.texttemplating.3.0.0.nupkg.sha512"
+    },
+    "Multicaster/2.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-KhcxjWkOG7jwUQwqf6sV8lDMPfj6pn2mhz14q4a4Tkt9ZpH5J4QPZgFw0gyt+Isr4nwPGt8E/FeiRy0aQKBGJg==",
+      "path": "multicaster/2.1.1",
+      "hashPath": "multicaster.2.1.1.nupkg.sha512"
     },
     "Newtonsoft.Json/13.0.3": {
       "type": "package",

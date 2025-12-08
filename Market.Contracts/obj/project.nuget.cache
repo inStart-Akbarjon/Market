@@ -1,13 +1,25 @@
 {
   "version": 2,
-  "dgSpecHash": "eHEplM2kbBQ=",
+  "dgSpecHash": "E6kwCXxxJmg=",
   "success": true,
   "projectFilePath": "C:\\Users\\Akbarjon\\RiderProjects\\Market.API\\Market.Contracts\\Market.Contracts.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Akbarjon\\.nuget\\packages\\grpc.aspnetcore.server\\2.57.0\\grpc.aspnetcore.server.2.57.0.nupkg.sha512",
+    "C:\\Users\\Akbarjon\\.nuget\\packages\\grpc.core.api\\2.57.0\\grpc.core.api.2.57.0.nupkg.sha512",
+    "C:\\Users\\Akbarjon\\.nuget\\packages\\grpc.net.client\\2.57.0\\grpc.net.client.2.57.0.nupkg.sha512",
+    "C:\\Users\\Akbarjon\\.nuget\\packages\\grpc.net.common\\2.57.0\\grpc.net.common.2.57.0.nupkg.sha512",
+    "C:\\Users\\Akbarjon\\.nuget\\packages\\magiconion\\7.0.7\\magiconion.7.0.7.nupkg.sha512",
+    "C:\\Users\\Akbarjon\\.nuget\\packages\\magiconion.abstractions\\7.0.7\\magiconion.abstractions.7.0.7.nupkg.sha512",
+    "C:\\Users\\Akbarjon\\.nuget\\packages\\magiconion.client\\7.0.7\\magiconion.client.7.0.7.nupkg.sha512",
+    "C:\\Users\\Akbarjon\\.nuget\\packages\\magiconion.serialization.messagepack\\7.0.7\\magiconion.serialization.messagepack.7.0.7.nupkg.sha512",
+    "C:\\Users\\Akbarjon\\.nuget\\packages\\magiconion.server\\7.0.7\\magiconion.server.7.0.7.nupkg.sha512",
+    "C:\\Users\\Akbarjon\\.nuget\\packages\\magiconion.shared\\7.0.7\\magiconion.shared.7.0.7.nupkg.sha512",
     "C:\\Users\\Akbarjon\\.nuget\\packages\\messagepack\\3.1.4\\messagepack.3.1.4.nupkg.sha512",
     "C:\\Users\\Akbarjon\\.nuget\\packages\\messagepack.annotations\\3.1.4\\messagepack.annotations.3.1.4.nupkg.sha512",
     "C:\\Users\\Akbarjon\\.nuget\\packages\\messagepackanalyzer\\3.1.4\\messagepackanalyzer.3.1.4.nupkg.sha512",
-    "C:\\Users\\Akbarjon\\.nuget\\packages\\microsoft.net.stringtools\\17.11.4\\microsoft.net.stringtools.17.11.4.nupkg.sha512"
+    "C:\\Users\\Akbarjon\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\Akbarjon\\.nuget\\packages\\microsoft.net.stringtools\\17.11.4\\microsoft.net.stringtools.17.11.4.nupkg.sha512",
+    "C:\\Users\\Akbarjon\\.nuget\\packages\\multicaster\\2.1.1\\multicaster.2.1.1.nupkg.sha512"
   ],
   "logs": []
 }

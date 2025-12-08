@@ -1,13 +1,14 @@
-﻿using Market.Contracts.Models.Request;
-using Market.Contracts.Models.Response;
+﻿using MagicOnion;
+using Market.Contracts.Models.Product.Request;
+using Market.Contracts.Models.Product.Response;
 
 namespace Market.Contracts.Interfaces.Services;
 
-public interface IProductService
+public interface IProductService : IService<IProductService>
 {
-    Task<List<GetProductResponse>> GetProduct(GetProductRequest request);
-    Task<GetProductByIdResponse>  GetProductById(GetProductByIdRequest request);
-    Task<CreateProductResponse> CreateProduct(CreateProductRequest request);
-    Task<UpdateProductResponse> UpdateProduct(UpdateProductRequest request);
-    Task<DeleteProductResponse> DeleteProduct(DeleteProductRequest request);
+    UnaryResult<List<GetAllProductsResponse>> GetAllProducts(GetProductRequest request);
+    UnaryResult<GetProductByIdResponse?>  GetProductById(GetProductByIdRequest request);
+    UnaryResult<CreateProductResponse> CreateProduct(CreateProductRequest request);
+    UnaryResult<UpdateProductResponse> UpdateProduct(int id, UpdateProductRequest request);
+    UnaryResult<DeleteProductResponse> DeleteProduct(int id, DeleteProductRequest request);
 }
