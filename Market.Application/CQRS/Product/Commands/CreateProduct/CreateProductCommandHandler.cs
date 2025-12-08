@@ -9,7 +9,7 @@ public class CreateProductCommandHandler(IProductRepository productRepository)
 {
     public async Task<CreateProductResponse> Handle(CreateProductCommand request, CancellationToken cancellationToken)
     {
-        var product = new Domain.Models.Product()
+        var product = new Domain.Models.Product.Product()
         {
             Title = request.Title,
             Description = request.Description,

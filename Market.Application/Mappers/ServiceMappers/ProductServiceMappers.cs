@@ -1,6 +1,6 @@
-﻿using Market.Application.Interfaces.Mappers;
+﻿using Market.Domain.Models.Product;
+using Market.Application.Interfaces.Mappers;
 using Market.Contracts.Models.Product.Response;
-using Market.Domain.Models;
 using DeleteProductResponse = Market.Contracts.Models.Product.Response.DeleteProductResponse;
 using UpdateProductResponse = Market.Contracts.Models.Product.Response.UpdateProductResponse;
 

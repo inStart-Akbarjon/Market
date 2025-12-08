@@ -1,4 +1,5 @@
 ﻿using Market.Domain.Models;
+using Market.Domain.Models.Product;
 using Microsoft.EntityFrameworkCore;
 
 namespace Market.Infrastructure.Data;

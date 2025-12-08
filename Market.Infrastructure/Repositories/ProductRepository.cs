@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Market.Infrastructure.Data;
 using Market.Domain.Models;
+using Market.Domain.Models.Product;
 
 namespace Market.Infrastructure.Repositories;
 

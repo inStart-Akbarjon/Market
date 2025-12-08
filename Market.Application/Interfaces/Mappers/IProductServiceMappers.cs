@@ -1,5 +1,6 @@
 ﻿using Market.Contracts.Models.Product.Response;
 using Market.Domain.Models;
+using Market.Domain.Models.Product;
 
 namespace Market.Application.Interfaces.Mappers;
 
