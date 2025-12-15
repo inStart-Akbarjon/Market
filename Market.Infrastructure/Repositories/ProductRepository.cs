@@ -11,8 +11,8 @@ public class ProductRepository(AppDbContext context) : IProductRepository
     {
         return context.Products.Where(p => 
             p.DeletedAt == null 
-            && p.OpenedAt <= DateTime.UtcNow
-            && p.ClosedAt > DateTime.UtcNow
+            // && p.OpenedAt <= DateTime.UtcNow
+            // && p.ClosedAt > DateTime.UtcNow
         ).AsQueryable().AsNoTracking();
     }
 
@@ -20,8 +20,8 @@ public class ProductRepository(AppDbContext context) : IProductRepository
     {
         return await context.Products.Where(p => 
             p.DeletedAt == null 
-            && p.OpenedAt <= DateTime.UtcNow
-            && p.ClosedAt > DateTime.UtcNow
+            // && p.OpenedAt <= DateTime.UtcNow
+            // && p.ClosedAt > DateTime.UtcNow
         ).FirstOrDefaultAsync(p => p.Id == id, cancellationToken);
     }
 

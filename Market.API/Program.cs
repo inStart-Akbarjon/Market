@@ -20,7 +20,6 @@ builder.Services.AddControllers();
 
 builder.Services.AddMagicOnion([typeof(IProductService).Assembly]);
 
-
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
@@ -46,10 +45,8 @@ var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
-    var magicOnionServiceDefinition =
-        app.Services.GetRequiredService<MagicOnionServiceDefinition>();
-
-    string baseUrl = " https://localhost:7271";
+    var magicOnionServiceDefinition = app.Services.GetRequiredService<MagicOnionServiceDefinition>();
+    const string baseUrl = " https://localhost:7271";
     
     app.MapMagicOnionHttpGateway(
         "/api",
