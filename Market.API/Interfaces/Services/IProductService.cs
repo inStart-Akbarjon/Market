@@ -2,7 +2,7 @@
 using Market.Contracts.Models.Product.Request;
 using Market.Contracts.Models.Product.Response;
 
-namespace Market.Contracts.Interfaces.Services;
+namespace Market.API.Interfaces.Services;
 
 public interface IProductService : IService<IProductService>
 {

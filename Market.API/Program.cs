@@ -1,3 +1,6 @@
+using Grpc.Net.Client;
+using MagicOnion.Server;
+using Market.API.Interfaces.Services;
 using Market.Application.CQRS.Product.Queries.GetAllProducts;
 using Market.Application.Interfaces.Repositories;
 using Market.Application.Mappers.ServiceMappers;
@@ -7,18 +10,15 @@ using ServiceModel.Grpc.Configuration;
 using Microsoft.EntityFrameworkCore;
 using Market.Infrastructure.Data;
 using Market.API.Services;
-using Market.Contracts.Interfaces.Services;
-using MessagePack;
 using Npgsql;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddGrpc();
 builder.Services.AddOpenApi();
-builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
 
-builder.Services.AddMagicOnion();
+builder.Services.AddMagicOnion([typeof(IProductService).Assembly]);
 
 
 builder.Services.AddSwaggerGen();
@@ -46,23 +46,37 @@ var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();
-    app.UseSwagger();
-    app.UseSwaggerUI(c =>
-    {
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "MagicOnion gRPC v1");
-    });
+    var magicOnionServiceDefinition =
+        app.Services.GetRequiredService<MagicOnionServiceDefinition>();
+
+    string baseUrl = " https://localhost:7271";
+    
+    app.MapMagicOnionHttpGateway(
+        "/api",
+        magicOnionServiceDefinition.MethodHandlers,
+        GrpcChannel.ForAddress(
+            baseUrl,
+            new GrpcChannelOptions
+            {
+                HttpHandler = new HttpClientHandler
+                {
+                    ServerCertificateCustomValidationCallback =
+                        HttpClientHandler.DangerousAcceptAnyServerCertificateValidator
+                }
+            }));
+    
+    app.MapMagicOnionSwagger(
+        "swagger",
+        magicOnionServiceDefinition.MethodHandlers,
+        "/api");
 }
 
 app.MapMagicOnionService();
 
-// app.MapGrpcService<ProductGrpcService>();
 app.MapGrpcService<ProductService>();
 
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
-
-app.MapControllers();
 
 app.Run();

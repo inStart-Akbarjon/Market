@@ -14,10 +14,9 @@
           <PrivateAssets>all</PrivateAssets>
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="MagicOnion" Version="7.0.7" />
-        <PackageReference Include="MagicOnion.Server" Version="7.0.7" />
-        <PackageReference Include="MagicOnion.Server.HttpGateway" Version="6.1.7" />
-        <PackageReference Include="MagicOnion.Server.JsonTranscoding" Version="7.0.7" />
+        <PackageReference Include="MagicOnion" Version="6.0.0" />
+        <PackageReference Include="MagicOnion.Server" Version="6.0.0" />
+        <PackageReference Include="MagicOnion.Server.HttpGateway" Version="6.0.0" />
 <!--        <PackageReference Include="MagicOnion.Server.HttpGateway" Version="6.1.7" />-->
         <PackageReference Include="MediatR" Version="14.0.0" />
         <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
