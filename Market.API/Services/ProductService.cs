@@ -41,7 +41,7 @@ public class ProductService(IMediator mediator) : ServiceBase<IProductService>, 
 
     public async UnaryResult<UpdateProductResponse> UpdateProduct(int id, UpdateProductRequest request)
     {
-         var command = new UpdateProductCommand(id, request.Title, request.Description, request.Price);
+         var command = new UpdateProductCommand(id, request.Title, request.Description, request.Price, request.OpenedAt, request.ClosedAt);
          var res = await mediator.Send(command);
 
          return res ?? throw new RpcException(new Status(StatusCode.NotFound,$"Product with id {request.Id} not found"));

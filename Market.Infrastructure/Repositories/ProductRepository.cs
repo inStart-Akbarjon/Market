@@ -1,8 +1,7 @@
 ﻿using Market.Application.Interfaces.Repositories;
 using Microsoft.EntityFrameworkCore;
-using Market.Infrastructure.Data;
-using Market.Domain.Models;
 using Market.Domain.Models.Product;
+using Market.Infrastructure.Data;
 
 namespace Market.Infrastructure.Repositories;
 
