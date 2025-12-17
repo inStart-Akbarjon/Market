@@ -5,17 +5,16 @@ using Market.Application.CQRS.Product.Queries.GetAllProducts;
 using Market.Application.CQRS.Product.Queries.GetProductById;
 using Market.Contracts.Models.Product.Response;
 using Market.Contracts.Models.Product.Request;
+using Market.API.Interfaces.Services;
 using MagicOnion.Server;
 using MagicOnion;
 using Grpc.Core;
-using Market.API.Interfaces.Services;
 using MediatR;
 
 namespace Market.API.Services;
 
 public class ProductService(IMediator mediator) : ServiceBase<IProductService>, IProductService
 {
-    
     public async UnaryResult<List<GetAllProductsResponse>> GetAllProducts(GetProductRequest request)
     {
          var query = new GetAllProductsQuery();
@@ -41,7 +40,7 @@ public class ProductService(IMediator mediator) : ServiceBase<IProductService>, 
     {
          var command = new UpdateProductCommand(id, request.Title, request.Description, request.Price, request.OpenedAt, request.ClosedAt);
          var res = await mediator.Send(command);
-         return res ?? throw new RpcException(new Status(StatusCode.NotFound,$"Product with id {request.Id} not found"));
+         return res ?? throw new RpcException(new Status(StatusCode.NotFound,$"Product with id {id} not found"));
     }
 
     public async UnaryResult<DeleteProductResponse> DeleteProduct(int id, DeleteProductRequest request)

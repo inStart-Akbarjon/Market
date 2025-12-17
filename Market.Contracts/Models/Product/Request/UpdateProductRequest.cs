@@ -5,12 +5,9 @@ namespace Market.Contracts.Models.Product.Request;
 [MessagePackObject]
 public class UpdateProductRequest
 {
-    [Key(0)] public int Id { get; set; }
-    [Key(1)] public string Title { get; set; }
-    [Key(2)] public string? Description { get; set; }
-    [Key(3)] public double Price { get; set; }
-    [Key(4)] public DateTime CreatedAt { get; set; }
-    [Key(5)] public DateTime? UpdatedAt { get; set; }
-    [Key(6)] public DateTime? OpenedAt { get; set; }
-    [Key(7)] public DateTime? ClosedAt { get; set; }
+    [Key(0)] public string Title { get; set; }
+    [Key(1)] public string? Description { get; set; }
+    [Key(2)] public double Price { get; set; }
+    [Key(3)] public DateTime? OpenedAt { get; set; }
+    [Key(4)] public DateTime? ClosedAt { get; set; }
 }

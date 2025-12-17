@@ -1,10 +1,10 @@
-﻿using Market.Application.Interfaces.Repositories;
-using Market.Contracts.Models.Product.Response;
+﻿using Market.Contracts.Models.Product.Response;
+using Market.Infrastructure.Data;
 using MediatR;
 
 namespace Market.Application.CQRS.Product.Commands.CreateProduct;
 
-public class CreateProductCommandHandler(IProductRepository productRepository)
+public class CreateProductCommandHandler(AppDbContext context)
     : IRequestHandler<CreateProductCommand, CreateProductResponse>
 {
     public async Task<CreateProductResponse> Handle(CreateProductCommand request, CancellationToken cancellationToken)
@@ -18,12 +18,18 @@ public class CreateProductCommandHandler(IProductRepository productRepository)
             ClosedAt = request.ClosedAt
         };
         
-        await productRepository.CreateAsync(product, cancellationToken);
-        await productRepository.SaveChangesAsync(cancellationToken);
+        await context.Products.AddAsync(product, cancellationToken);
+        
+        await context.SaveChangesAsync(cancellationToken);
         
         return new CreateProductResponse()
         {
-            Id = product.Id
+            Id = product.Id,
+            Title = product.Title,
+            Description = product.Description,
+            Price = product.Price,
+            OpenedAt = product.OpenedAt,
+            ClosedAt = product.ClosedAt
         };
     }
 }

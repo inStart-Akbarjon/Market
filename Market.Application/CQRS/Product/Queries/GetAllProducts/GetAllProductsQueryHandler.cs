@@ -1,17 +1,16 @@
-using Market.Application.Interfaces.Repositories;
 using Market.Contracts.Models.Product.Response;
+using Market.Infrastructure.Data;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
 namespace Market.Application.CQRS.Product.Queries.GetAllProducts;
 
-public class GetAllProductsQueryHandler(IProductRepository productRepository)
+public class GetAllProductsQueryHandler(AppDbContext context)
     : IRequestHandler<GetAllProductsQuery, List<GetAllProductsResponse>>
 {
-    
     public async Task<List<GetAllProductsResponse>> Handle(GetAllProductsQuery request, CancellationToken cancellationToken)
     {
-        var products = productRepository.GetAllAsync();
+        var products = context.Products.Where(product => product.DeletedAt == null);
         
         return await products.Select(product => new GetAllProductsResponse()
         {

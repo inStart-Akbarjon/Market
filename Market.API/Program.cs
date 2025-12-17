@@ -2,10 +2,8 @@ using Grpc.Net.Client;
 using MagicOnion.Server;
 using Market.API.Interfaces.Services;
 using Market.Application.CQRS.Product.Queries.GetAllProducts;
-using Market.Application.Interfaces.Repositories;
 using Market.Application.Mappers.ServiceMappers;
 using Market.Application.Interfaces.Mappers;
-using Market.Infrastructure.Repositories;
 using ServiceModel.Grpc.Configuration;
 using Microsoft.EntityFrameworkCore;
 using Market.Infrastructure.Data;
@@ -21,8 +19,6 @@ builder.Services.AddControllers();
 builder.Services.AddMagicOnion([typeof(IProductService).Assembly]);
 
 builder.Services.AddSwaggerGen();
-
-builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IProductServiceMappers, ProductServiceMappers>();
 
 // Grpc+MessagePack connection:

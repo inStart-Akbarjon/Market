@@ -1,15 +1,16 @@
-﻿using Market.Application.Interfaces.Repositories;
-using Market.Contracts.Models.Product.Response;
+﻿using Market.Contracts.Models.Product.Response;
+using Market.Infrastructure.Data;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 
 namespace Market.Application.CQRS.Product.Commands.DeleteProduct;
 
-public class DeleteProductCommandHandler(IProductRepository productRepository)
+public class DeleteProductCommandHandler(AppDbContext context)
     : IRequestHandler<DeleteProductCommand, DeleteProductResponse>
 {
     public async Task<DeleteProductResponse> Handle(DeleteProductCommand request, CancellationToken cancellationToken)
     {
-        var product = await productRepository.GetByIdAsync(request.id, cancellationToken);
+        var product = await context.Products.FirstOrDefaultAsync(p => p.Id == request.id, cancellationToken);
 
         if (product == null)
         {
@@ -17,7 +18,7 @@ public class DeleteProductCommandHandler(IProductRepository productRepository)
         }
         
         product.DeletedAt = DateTime.UtcNow;
-        await productRepository.SaveChangesAsync(cancellationToken);
+        await context.SaveChangesAsync(cancellationToken);
         
         return new  DeleteProductResponse()
         {

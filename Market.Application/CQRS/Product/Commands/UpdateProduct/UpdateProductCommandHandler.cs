@@ -1,15 +1,16 @@
-using Market.Application.Interfaces.Repositories;
 using Market.Contracts.Models.Product.Response;
+using Market.Infrastructure.Data;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 
 namespace Market.Application.CQRS.Product.Commands.UpdateProduct;
 
-public class UpdateProductCommandHandler(IProductRepository productRepository)
-    : IRequestHandler<UpdateProductCommand, UpdateProductResponse>
+public class UpdateProductCommandHandler(AppDbContext context)
+    : IRequestHandler<UpdateProductCommand, UpdateProductResponse?>
 {
     public async Task<UpdateProductResponse?> Handle(UpdateProductCommand request, CancellationToken cancellationToken)
     {
-        var product = await productRepository.GetByIdAsync(request.id, cancellationToken);
+        var product = await context.Products.FirstOrDefaultAsync(p => p.Id == request.id, cancellationToken);
         
         if (product == null)
         {
@@ -23,12 +24,17 @@ public class UpdateProductCommandHandler(IProductRepository productRepository)
         product.OpenedAt = request.OpenedAt;
         product.ClosedAt = request.ClosedAt;
         
-        productRepository.UpdateAsync(product, cancellationToken);
-        await productRepository.SaveChangesAsync(cancellationToken);
+        context.Update(product);
+        await context.SaveChangesAsync(cancellationToken);
         
         return new UpdateProductResponse()
         {
             Id = product.Id,
+            Title = product.Title,
+            Description = product.Description,
+            Price = product.Price,
+            OpenedAt = product.OpenedAt,
+            ClosedAt = product.ClosedAt,
         };
     }
 }

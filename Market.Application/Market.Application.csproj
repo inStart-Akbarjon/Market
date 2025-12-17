@@ -9,6 +9,7 @@
     <ItemGroup>
       <ProjectReference Include="..\Market.Contracts\Market.Contracts.csproj" />
       <ProjectReference Include="..\Market.Domain\Market.Domain.csproj" />
+      <ProjectReference Include="..\Market.Infrastructure\Market.Infrastructure.csproj" />
     </ItemGroup>
 
     <ItemGroup>
