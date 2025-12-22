@@ -1,41 +1,33 @@
-using Grpc.Net.Client;
-using MagicOnion.Server;
-using Market.API.Interfaces.Services;
-using Market.Application.CQRS.Product.Queries.GetAllProducts;
 using Market.Application.Mappers.ServiceMappers;
 using Market.Application.Interfaces.Mappers;
-using ServiceModel.Grpc.Configuration;
-using Microsoft.EntityFrameworkCore;
-using Market.Infrastructure.Data;
+using Market.Application.Extensions.Product;
+using Market.Contracts.Interfaces.Services;
 using Market.API.Services;
+using MagicOnion.Server;
+using Grpc.Net.Client;
+using Market.Infrastructure.Data;
+using Market.Infrastructure.Interceptors;
+using Microsoft.EntityFrameworkCore;
 using Npgsql;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddGrpc();
 builder.Services.AddOpenApi();
-builder.Services.AddControllers();
+builder.Services.AddControllers();  
 
-builder.Services.AddMagicOnion([typeof(IProductService).Assembly]);
+builder.Services.AddMagicOnion([
+    typeof(IProductService).Assembly,
+    typeof(ProductService).Assembly 
+]);
 
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IProductServiceMappers, ProductServiceMappers>();
+builder.Services.AddSingleton<AuditInterceptor>();
 
-// Grpc+MessagePack connection:
-builder.Services.AddServiceModelGrpc(options =>
-{
-    options.DefaultMarshallerFactory = MessagePackMarshallerFactory.Default;
-});
-
-// MediatR connection:
-builder.Services.AddMediatR(cfg => 
-{
-    cfg.RegisterServicesFromAssembly(typeof(GetAllProductsQueryHandler).Assembly);
-});
-
-// Database connection:
-builder.Services.AddDbContext<AppDbContext>(options => 
-    options.UseNpgsql(new NpgsqlConnection(builder.Configuration.GetConnectionString("DefaultConnection"))));
+builder.Services.AddGrpcModelService();
+builder.Services.AddMediatorRegistration();
+builder.Services.AddDbConnection(builder.Configuration);
 
 var app = builder.Build();
 
@@ -65,8 +57,6 @@ if (app.Environment.IsDevelopment())
 }
 
 app.MapMagicOnionService();
-
-app.MapGrpcService<ProductService>();
 
 app.UseHttpsRedirection();
 

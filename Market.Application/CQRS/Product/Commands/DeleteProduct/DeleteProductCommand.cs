@@ -3,6 +3,6 @@ using MediatR;
 
 namespace Market.Application.CQRS.Product.Commands.DeleteProduct;
 
-public record DeleteProductCommand(int id) : IRequest<DeleteProductResponse>
+public record DeleteProductCommand(int Id) : IRequest<DeleteProductResponse>
 {
 }
