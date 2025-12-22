@@ -1,17 +1,19 @@
 using Market.Contracts.Models.Product.Response;
+using Microsoft.EntityFrameworkCore;
 using Market.Infrastructure.Data;
 using MediatR;
-using Microsoft.EntityFrameworkCore;
 
 namespace Market.Application.CQRS.Product.Queries.GetAllProducts;
 
 public class GetAllProductsQueryHandler(AppDbContext context)
     : IRequestHandler<GetAllProductsQuery, List<GetAllProductsResponse>>
 {
-    public async Task<List<GetAllProductsResponse>> Handle(GetAllProductsQuery request, CancellationToken cancellationToken)
+    public async Task<List<GetAllProductsResponse>> Handle(GetAllProductsQuery request,
+        CancellationToken cancellationToken)
     {
-        var products = context.Products.Where(product => product.DeletedAt == null);
-        
+        var products = context.Products.Where(product => product.DeletedAt == null)
+            .Skip((request.PageNumber - 1) * request.PageSize).Take(request.PageSize);
+
         return await products.Select(product => new GetAllProductsResponse()
         {
             Id = product.Id,
@@ -21,7 +23,7 @@ public class GetAllProductsQueryHandler(AppDbContext context)
             CreatedAt = product.CreatedAt,
             UpdatedAt = product.UpdatedAt,
             DeletedAt = product.DeletedAt,
-            OpenedAt =  product.OpenedAt,
+            OpenedAt = product.OpenedAt,
             ClosedAt = product.ClosedAt,
         }).ToListAsync(cancellationToken);
     }
