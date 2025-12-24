@@ -4,9 +4,9 @@ using Market.Contracts.Models.Product.Response;
 
 namespace Market.Contracts.Interfaces.Services;
 
-public interface IProductService : IService<IProductService>
+public interface IProductServiceGrpc : IService<IProductServiceGrpc>
 {
-    UnaryResult<List<GetAllProductsResponse>> GetAllProducts(GetAllProductRequest request);
+    UnaryResult<PaginatedList<GetAllProductsResponse>> GetAllProducts(GetAllProductRequest request);
     UnaryResult<GetProductByIdResponse?>  GetProductById(GetProductByIdRequest request);
     UnaryResult<CreateProductResponse> CreateProduct(CreateProductRequest request);
     UnaryResult<UpdateProductResponse> UpdateProduct(int id, UpdateProductRequest request);

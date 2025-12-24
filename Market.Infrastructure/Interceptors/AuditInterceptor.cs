@@ -26,7 +26,7 @@ public class AuditInterceptor : SaveChangesInterceptor
                     break;
             }
         }
-
+        
         return new ValueTask<InterceptionResult<int>>(result);
     }
 }

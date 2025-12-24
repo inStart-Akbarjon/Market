@@ -9,7 +9,7 @@ namespace Market.Application.Extensions.Product;
 
 public static class DbConnectionServiceExtension
 {
-    public static IServiceCollection  AddDbConnection(this IServiceCollection services, IConfiguration configuration)
+    public static IServiceCollection AddDbConnection(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddSingleton<AuditInterceptor>();
         
@@ -17,7 +17,6 @@ public static class DbConnectionServiceExtension
         {
             options.UseNpgsql(new NpgsqlConnection(configuration.GetConnectionString("DefaultConnection")));
             options.AddInterceptors(sp.GetRequiredService<AuditInterceptor>());
-
         });
         
         return services;

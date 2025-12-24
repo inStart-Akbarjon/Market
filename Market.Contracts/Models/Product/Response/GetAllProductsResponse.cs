@@ -15,3 +15,12 @@ public class GetAllProductsResponse
     [Key(7)] public DateTime? OpenedAt { get; set; }
     [Key(8)] public DateTime? ClosedAt { get; set; }
 }
+
+[MessagePackObject]
+public class PaginatedList<T>
+{
+    [Key(0)] public List<T> Items { get; set; }
+    [Key(1)] public int PageNumber { get; set; }
+    [Key(2)] public int PageSize { get; set; }
+    [Key(3)] public bool HasNextPage { get; set; }
+}

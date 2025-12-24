@@ -9,7 +9,7 @@ public static class GatewayConnectionExtensions
 {
     public static IServiceCollection AddGatewayProductConnection(this IServiceCollection services)
     {
-        services.AddSingleton<IProductService>(sp =>
+        services.AddSingleton<IProductServiceGrpc>(sp =>
         {
             var channel = GrpcChannel.ForAddress(
                 "https://localhost:7271",
@@ -21,7 +21,7 @@ public static class GatewayConnectionExtensions
                     }
                 });
 
-            return MagicOnionClient.Create<IProductService>(channel);
+            return MagicOnionClient.Create<IProductServiceGrpc>(channel);
         });
         
         return services;
