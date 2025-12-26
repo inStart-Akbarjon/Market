@@ -7,6 +7,7 @@ public record CreateProductCommand(
     string Title, 
     string? Description, 
     double Price,
-    DateTime? OpenedAt,
-    DateTime? ClosedAt
+    int Quantity,
+    int? OpenedAt,
+    int? ClosedAt
 ) : IRequest<CreateProductResponse> { }

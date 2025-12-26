@@ -5,7 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddGrpc();
 builder.Services.AddOpenApi();
-builder.Services.AddControllers();  
+builder.Services.AddControllers();
 
 builder.Services.AddMagicOnion([
     typeof(ProductServiceGrpc).Assembly
@@ -22,6 +22,7 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.AddGrpcSwaggerConfigurationService();
+    app.AddMiddlewareRegistrationServiceExtension();
 }
 
 app.MapMagicOnionService();

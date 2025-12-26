@@ -19,6 +19,7 @@ public class DeleteProductCommandHandler(AppDbContext context, IProductServiceMa
         }
 
         product.SoftDelete();
+        
         await context.SaveChangesAsync(cancellationToken);
         
         return productServiceMappers.ToDeleteProductResponse(product);

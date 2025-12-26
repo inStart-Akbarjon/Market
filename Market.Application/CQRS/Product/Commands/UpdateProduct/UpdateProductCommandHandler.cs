@@ -22,6 +22,7 @@ public class UpdateProductCommandHandler(AppDbContext context, IProductServiceMa
         product.Title = request.Title;
         product.Description = request.Description;
         product.Price = request.Price;
+        product.Quantity = request.Quantity;
         product.OpenedAt = request.OpenedAt;
         product.ClosedAt = request.ClosedAt;
         

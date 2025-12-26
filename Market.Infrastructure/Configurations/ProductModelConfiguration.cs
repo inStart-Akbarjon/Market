@@ -8,6 +8,7 @@ public class ProductModelConfiguration : IEntityTypeConfiguration<Product>
 {
     public void Configure(EntityTypeBuilder<Product> builder)
     {
-        builder.HasIndex(p => new {p.Id, p.DeletedAt });
+        builder.HasIndex(p => new { p.Id, p.DeletedAt });
+        builder.HasIndex(p => new { p.Title });
     }
 }

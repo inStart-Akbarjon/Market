@@ -17,9 +17,7 @@ public class ProductServiceMappers : IProductServiceMappers
             Title = product.Title,
             Description = product.Description,
             Price = product.Price,
-            CreatedAt = product.CreatedAt,
-            UpdatedAt = product.UpdatedAt,
-            DeletedAt = product.DeletedAt,
+            Quantity = product.Quantity,
             OpenedAt = product.OpenedAt,
             ClosedAt = product.ClosedAt,
         };
@@ -33,6 +31,7 @@ public class ProductServiceMappers : IProductServiceMappers
             Title = product.Title,
             Description = product.Description,
             Price = product.Price,
+            Quantity = product.Quantity,
             OpenedAt = product.OpenedAt,
             ClosedAt = product.ClosedAt
         };
@@ -46,6 +45,7 @@ public class ProductServiceMappers : IProductServiceMappers
             Title = product.Title,
             Description = product.Description,
             Price = product.Price,
+            Quantity = product.Quantity,
             OpenedAt = product.OpenedAt,
             ClosedAt = product.ClosedAt,
         };
@@ -66,6 +66,7 @@ public class ProductServiceMappers : IProductServiceMappers
             Title = product.Title,
             Description = product.Description,
             Price = product.Price,
+            Quantity = product.Quantity,
             OpenedAt = product.OpenedAt,
             ClosedAt = product.ClosedAt
         };

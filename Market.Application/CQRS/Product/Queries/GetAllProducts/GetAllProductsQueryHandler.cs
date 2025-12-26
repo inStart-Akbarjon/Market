@@ -11,10 +11,12 @@ public class GetAllProductsQueryHandler(AppDbContext context)
     public async Task<PaginatedList<GetAllProductsResponse>> Handle(GetAllProductsQuery request,
         CancellationToken cancellationToken)
     {
-        var products = await context.Products.Where(p => p.DeletedAt == null)
-            .ToGetAllProductsResponse().PaginateAsync<GetAllProductsResponse>(request.PageNumber, request.PageSize,
+        var products = await context.Products
+            .Where(p => p.DeletedAt == null)
+            .ToGetAllProductsResponse()
+            .PaginateAsync(request.PageNumber, request.PageSize,
                 cancellationToken: cancellationToken);
-
+        
         return products;
     }
 }

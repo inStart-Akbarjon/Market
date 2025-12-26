@@ -11,7 +11,8 @@ public class GetByIdProductQueryHandler(AppDbContext context, IProductServiceMap
 {
     public async Task<GetProductByIdResponse?> Handle(GetByIdProductQuery request, CancellationToken cancellationToken)
     {
-        var product = await context.Products.AsNoTracking()
+        var product = await context.Products
+            .AsNoTracking()
             .FirstOrDefaultAsync(p => p.Id == request.Id && p.DeletedAt == null, cancellationToken);
 
         return product == null ? null : productMappers.ToGetByIdProductResponse(product);
