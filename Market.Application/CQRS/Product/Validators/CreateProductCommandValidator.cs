@@ -9,18 +9,18 @@ public class CreateProductCommandValidator : AbstractValidator<CreateProductComm
     {
         RuleFor(p => p.Title)
             .NotEmpty()
-            .WithMessage($"Title field must have value");
+            .WithMessage($"Property Title must have value");
 
         RuleFor(p => p.Price)
             .NotEmpty()
-            .WithMessage($"Price field must have value")
+            .WithMessage($"Property Price must have value")
             .GreaterThan(0)
-            .WithMessage($"Price field should be greater than 0");
+            .WithMessage($"Property Price should not be negative");
 
         RuleFor(p => p.Quantity)
             .NotEmpty()
-            .WithMessage($"Quantity field must have value")
+            .WithMessage($"Property Quantity must have value")
             .GreaterThan(0)
-            .WithMessage($"Quantity field should be greater than 0");
+            .WithMessage($"Property Quantity should not be negative");
     }
 }

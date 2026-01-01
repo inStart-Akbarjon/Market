@@ -1,6 +1,6 @@
 ﻿using Grpc.Net.Client;
 using MagicOnion.Client;
-using Market.Contracts.Interfaces.Services;
+using Market.Contracts.Interfaces.GrpcServices;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Market.Contracts;

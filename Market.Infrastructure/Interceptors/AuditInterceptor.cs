@@ -1,4 +1,4 @@
-﻿using Market.Domain.Models.Product;
+﻿using Market.Domain.Entities.Product;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 

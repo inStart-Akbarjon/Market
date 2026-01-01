@@ -1,21 +1,25 @@
-﻿using Market.Application.Interfaces.Mappers;
+﻿using System.Net;
+using Market.Application.Exceptions.Product;
+using Market.Application.Interfaces.AppDbContext;
+using Market.Application.Interfaces.Mappers;
 using Market.Contracts.Models.Product.Response;
-using Market.Infrastructure.Data;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
 namespace Market.Application.CQRS.Product.Commands.DeleteProduct;
 
-public class DeleteProductCommandHandler(AppDbContext context, IProductServiceMappers productServiceMappers)
-    : IRequestHandler<DeleteProductCommand, DeleteProductResponse?>
+public class DeleteProductCommandHandler(
+    IAppDbContext context, 
+    IProductServiceMappers productServiceMappers
+    ) : IRequestHandler<DeleteProductCommand, DeleteProductResponse?>
 {
     public async Task<DeleteProductResponse?> Handle(DeleteProductCommand request, CancellationToken cancellationToken)
     {
         var product = await context.Products.FirstOrDefaultAsync(p => p.Id == request.Id, cancellationToken);
 
-        if (product == null)
+        if (product is null)
         {
-            return null;
+            throw new NotFoundException($"Product with id {request.Id} not found!");
         }
 
         product.SoftDelete();

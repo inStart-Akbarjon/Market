@@ -7,8 +7,8 @@ public static class PaginationExtension
 {
     public static async Task<PaginatedList<T>> PaginateAsync<T>(
         this IQueryable<T> queryable, 
-        int pageNumber,
-        int pageSize,
+        int pageNumber = 1,
+        int pageSize = 10,
         CancellationToken cancellationToken = default)
     {
         var paginatedItems =
@@ -27,7 +27,7 @@ public static class PaginationExtension
     }
 
     public static IQueryable<GetAllProductsResponse> ToGetAllProductsResponse(
-        this IQueryable<Domain.Models.Product.Product> queryable)
+        this IQueryable<Domain.Entities.Product.Product> queryable)
     {
         var allProductsResponses = queryable.Select(x =>
             new GetAllProductsResponse()

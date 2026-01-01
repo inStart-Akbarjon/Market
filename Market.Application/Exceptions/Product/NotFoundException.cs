@@ -1,6 +1,8 @@
-﻿namespace Market.Application.Exceptions.Product;
+﻿using System.Net;
+using Market.Application.Exceptions.Abstract;
 
-public class NotFoundException(string message) : Exception(message)
+namespace Market.Application.Exceptions.Product;
+
+public class NotFoundException(string message) : AppException(message)
 {
-    
 }

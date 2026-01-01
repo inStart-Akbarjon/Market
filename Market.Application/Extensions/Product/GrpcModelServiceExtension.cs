@@ -1,5 +1,4 @@
-﻿using Market.Infrastructure.Interceptors;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using ServiceModel.Grpc.Configuration;
 
 namespace Market.Application.Extensions.Product;

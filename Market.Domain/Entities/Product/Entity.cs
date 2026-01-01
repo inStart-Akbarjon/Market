@@ -1,4 +1,4 @@
-﻿namespace Market.Domain.Models.Product;
+﻿namespace Market.Domain.Entities.Product;
 
 public abstract class Entity
 {

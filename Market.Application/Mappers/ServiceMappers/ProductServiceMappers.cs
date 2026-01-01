@@ -1,7 +1,7 @@
 ﻿using Market.Application.CQRS.Product.Commands.CreateProduct;
-using Market.Domain.Models.Product;
 using Market.Application.Interfaces.Mappers;
 using Market.Contracts.Models.Product.Response;
+using Market.Domain.Entities.Product;
 using DeleteProductResponse = Market.Contracts.Models.Product.Response.DeleteProductResponse;
 using UpdateProductResponse = Market.Contracts.Models.Product.Response.UpdateProductResponse;
 

@@ -1,11 +1,11 @@
-﻿using Market.Infrastructure.Data;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Market.Infrastructure.Interceptors;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
+using Market.Infrastructure.Data;
 using Npgsql;
 
-namespace Market.Application.Extensions.Product;
+namespace Market.Infrastructure.Extensions;
 
 public static class DbConnectionServiceExtension
 {

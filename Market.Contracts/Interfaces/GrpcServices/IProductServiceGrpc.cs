@@ -2,7 +2,7 @@
 using Market.Contracts.Models.Product.Request;
 using Market.Contracts.Models.Product.Response;
 
-namespace Market.Contracts.Interfaces.Services;
+namespace Market.Contracts.Interfaces.GrpcServices;
 
 public interface IProductServiceGrpc : IService<IProductServiceGrpc>
 {

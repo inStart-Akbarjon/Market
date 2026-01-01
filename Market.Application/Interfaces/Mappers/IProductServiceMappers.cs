@@ -1,8 +1,6 @@
 ﻿using Market.Application.CQRS.Product.Commands.CreateProduct;
-using Market.Contracts.Models.Product.Request;
 using Market.Contracts.Models.Product.Response;
-using Market.Domain.Models;
-using Market.Domain.Models.Product;
+using Market.Domain.Entities.Product;
 
 namespace Market.Application.Interfaces.Mappers;
 
