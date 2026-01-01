@@ -1,0 +1,1 @@
+This project has no logic yet, just crud operations implemented, and the main focus was to learn and practice some technologies and patterns like CQRS, Grpc (MagicOnion framework), MessagePack, Microservices, and also communication between grpc service and api gateway which implements rest api 
