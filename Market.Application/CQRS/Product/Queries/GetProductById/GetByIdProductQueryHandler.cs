@@ -1,10 +1,9 @@
-﻿using System.Net;
-using Market.Application.Exceptions.Product;
-using Market.Application.Interfaces.AppDbContext;
+﻿using Market.Application.Interfaces.AppDbContext;
 using Market.Contracts.Models.Product.Response;
 using Market.Application.Interfaces.Mappers;
-using MediatR;
+using Market.Application.Exceptions.Product;
 using Microsoft.EntityFrameworkCore;
+using MediatR;
 
 namespace Market.Application.CQRS.Product.Queries.GetProductById;
 
@@ -23,7 +22,7 @@ public class GetByIdProductQueryHandler(
 
         if (product is null)
         {
-            throw new NotFoundException($"Product with id {request.Id} not found!");
+            throw new NotFoundException(request.Id);
         }
         
         return productMappers.ToGetByIdProductResponse(product);

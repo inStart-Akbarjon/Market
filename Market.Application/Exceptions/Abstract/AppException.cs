@@ -1,3 +1,7 @@
-﻿namespace Market.Application.Exceptions.Abstract;
+﻿using System.Runtime.Serialization;
 
-public abstract class AppException(string message) : Exception(message);
+namespace Market.Application.Exceptions.Abstract;
+
+public abstract class AppException(string? message) : Exception(message)
+{
+}

@@ -4,6 +4,7 @@ using FluentValidation;
 using Market.Application.Exceptions.Product;
 using Market.Application.Interfaces.AppDbContext;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 
 namespace Market.Application.CQRS.Product.Commands.CreateProduct;
 
@@ -23,6 +24,13 @@ public class CreateProductCommandHandler(
             {
                 throw new InvalidRequestException(failure.ErrorMessage);
             }
+        }
+        
+        var sameProduct = await context.Products.AsNoTracking().FirstOrDefaultAsync(p => p.Title == request.Title, cancellationToken: cancellationToken);
+
+        if (sameProduct != null)
+        {
+            throw new InvalidRequestException("Title", $"{request.Title}");
         }
         
         var product = productServiceMappers.ToProductEntity(request);

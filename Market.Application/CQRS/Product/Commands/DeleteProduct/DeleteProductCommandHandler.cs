@@ -1,5 +1,4 @@
-﻿using System.Net;
-using Market.Application.Exceptions.Product;
+﻿using Market.Application.Exceptions.Product;
 using Market.Application.Interfaces.AppDbContext;
 using Market.Application.Interfaces.Mappers;
 using Market.Contracts.Models.Product.Response;
@@ -19,7 +18,7 @@ public class DeleteProductCommandHandler(
 
         if (product is null)
         {
-            throw new NotFoundException($"Product with id {request.Id} not found!");
+            throw new NotFoundException(request.Id);
         }
 
         product.SoftDelete();

@@ -1,3 +1,4 @@
+using FluentValidation;
 using Market.Application.Exceptions.Product;
 using Market.Application.Interfaces.AppDbContext;
 using Market.Application.Interfaces.Mappers;
@@ -9,17 +10,36 @@ namespace Market.Application.CQRS.Product.Commands.UpdateProduct;
 
 public class UpdateProductCommandHandler(
     IAppDbContext context, 
-    IProductServiceMappers productServiceMappers
-    ) : IRequestHandler<UpdateProductCommand, UpdateProductResponse?>
+    IProductServiceMappers productServiceMappers,
+    IValidator<UpdateProductCommand> validator
+) : IRequestHandler<UpdateProductCommand, UpdateProductResponse?>
 {
     public async Task<UpdateProductResponse?> Handle(UpdateProductCommand request, CancellationToken cancellationToken)
     {
+        var validationResult = await validator.ValidateAsync(request, cancellationToken);
+
+        if (!validationResult.IsValid)
+        {
+            foreach (var failure in validationResult.Errors)
+            {
+                throw new InvalidRequestException(failure.ErrorMessage);
+            }
+        }
+        
         var product = await context.Products.FirstOrDefaultAsync(p => p.Id == request.Id, cancellationToken);
         
         if (product is null)
         {
-            throw new NotFoundException($"Product with id {request.Id} not found!");
+            throw new NotFoundException(request.Id);
         }
+        
+        var sameProduct = await context.Products.AsNoTracking().FirstOrDefaultAsync(p => p.Title == request.Title, cancellationToken: cancellationToken);
+
+        if (sameProduct != null)
+        {
+            throw new InvalidRequestException("Title", $"{request.Title}");
+        }
+
         
         product.Title = request.Title;
         product.Description = request.Description;
