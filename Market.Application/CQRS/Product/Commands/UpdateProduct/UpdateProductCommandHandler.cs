@@ -39,7 +39,6 @@ public class UpdateProductCommandHandler(
         {
             throw new InvalidRequestException("Title", $"{request.Title}");
         }
-
         
         product.Title = request.Title;
         product.Description = request.Description;

@@ -1,6 +1,5 @@
 ﻿using Grpc.Core;
 using Grpc.Core.Interceptors;
-using Market.Application.Exceptions;
 using Market.Application.Exceptions.Abstract;
 using Market.Application.Exceptions.Product;
 

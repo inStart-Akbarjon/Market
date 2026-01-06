@@ -9,15 +9,15 @@ using Microsoft.EntityFrameworkCore;
 namespace Market.Application.CQRS.Product.Commands.CreateProduct;
 
 public class CreateProductCommandHandler(
-    IAppDbContext context, 
-    IProductServiceMappers productServiceMappers, 
+    IAppDbContext context,
+    IProductServiceMappers productServiceMappers,
     IValidator<CreateProductCommand> validator
     ) : IRequestHandler<CreateProductCommand, CreateProductResponse>
 {
     public async Task<CreateProductResponse> Handle(CreateProductCommand request, CancellationToken cancellationToken)
     {
         var validationResult = await validator.ValidateAsync(request, cancellationToken);
-
+        
         if (!validationResult.IsValid)
         {
             foreach (var failure in validationResult.Errors)

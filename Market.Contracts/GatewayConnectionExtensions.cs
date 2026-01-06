@@ -20,7 +20,7 @@ public static class GatewayConnectionExtensions
                         EnableMultipleHttp2Connections = true
                     }
                 });
-
+            
             return MagicOnionClient.Create<IProductServiceGrpc>(channel);
         });
         

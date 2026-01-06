@@ -3,7 +3,7 @@ using MagicOnion.Server;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Market.Application.Extensions.Product;
+namespace Market.Application.Extensions.Common;
 
 public static class GrpcConfigurationServiceExtension
 {

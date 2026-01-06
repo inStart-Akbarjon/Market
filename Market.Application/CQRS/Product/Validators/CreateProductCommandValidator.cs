@@ -13,13 +13,13 @@ public class CreateProductCommandValidator : AbstractValidator<CreateProductComm
 
         RuleFor(p => p.Price)
             .NotEmpty()
-            .WithMessage($"Property Price must have value")
+            .WithMessage($"Property Price should not be null or 0")
             .GreaterThan(0)
             .WithMessage($"Property Price should not be negative");
 
         RuleFor(p => p.Quantity)
             .NotEmpty()
-            .WithMessage($"Property Quantity must have value")
+            .WithMessage($"Property Quantity should not be null or 0")
             .GreaterThan(0)
             .WithMessage($"Property Quantity should not be negative");
     }

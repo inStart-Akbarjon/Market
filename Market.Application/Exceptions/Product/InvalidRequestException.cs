@@ -4,7 +4,7 @@ namespace Market.Application.Exceptions.Product;
 
 public class InvalidRequestException : AppException
 {
-    public InvalidRequestException(string message) : base($"Validation error occured: {message}")
+    public InvalidRequestException(string message) : base($"Validation error: {message}")
     {
     }
 

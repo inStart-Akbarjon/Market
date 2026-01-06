@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using ServiceModel.Grpc.Configuration;
 
-namespace Market.Application.Extensions.Product;
+namespace Market.Application.Extensions.Common;
 
 public static class GrpcModelServiceExtension
 {

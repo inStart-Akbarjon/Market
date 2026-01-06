@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Market.Application", "Marke
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Market.Contracts", "Market.Contracts\Market.Contracts.csproj", "{6AC87D9A-78C4-4F75-A50F-90138FF0CA71}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Market.Tests", "Market.Tests\Market.Tests.csproj", "{1C217114-38B2-46FD-8EBD-4B87856C5B96}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +38,9 @@ Global
 		{6AC87D9A-78C4-4F75-A50F-90138FF0CA71}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6AC87D9A-78C4-4F75-A50F-90138FF0CA71}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6AC87D9A-78C4-4F75-A50F-90138FF0CA71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C217114-38B2-46FD-8EBD-4B87856C5B96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C217114-38B2-46FD-8EBD-4B87856C5B96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C217114-38B2-46FD-8EBD-4B87856C5B96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C217114-38B2-46FD-8EBD-4B87856C5B96}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
