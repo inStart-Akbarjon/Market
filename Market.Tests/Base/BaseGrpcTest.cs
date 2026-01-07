@@ -4,7 +4,6 @@ using Market.Tests.Fixtures;
 
 namespace Market.Tests.Base;
 
-// [CollectionDefinition("IntegrationTests")]
 public class BaseGrpcTest<TService> : IAsyncLifetime, IClassFixture<IntegrationTestWebAppFactory>  where TService : MagicOnion.IService<TService>
 {
     protected readonly TService Client;

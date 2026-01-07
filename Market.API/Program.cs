@@ -1,10 +1,10 @@
 using Market.Application.Interfaces.AppDbContext;
 using Market.Application.Extensions.Product;
+using Market.Application.Extensions.Common;
 using Market.Infrastructure.Interceptors;
 using Market.Infrastructure.Extensions;
 using Market.Infrastructure.Data;
 using Market.API.Services;
-using Market.Application.Extensions.Common;
 
 var builder = WebApplication.CreateBuilder(args);
 

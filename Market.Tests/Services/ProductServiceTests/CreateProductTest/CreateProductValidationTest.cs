@@ -7,7 +7,7 @@ using Market.Tests.Fixtures;
 
 namespace Market.Tests.Services.ProductServiceTests.CreateProductTest;
 
-[Collection("CreateIntegration")]
+[Collection("CreateProductIntegration")]
 public class CreateProductValidationTest(IntegrationTestWebAppFactory factory) : BaseGrpcTest<IProductServiceGrpc>(factory)
 {
     [Fact]
@@ -21,7 +21,7 @@ public class CreateProductValidationTest(IntegrationTestWebAppFactory factory) :
             Price = 100,
             Quantity = 10,
         };
-         
+            
         // Act
         var ex = await Assert.ThrowsAsync<RpcException>(async () => 
             await Client.CreateProduct(request)
