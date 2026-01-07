@@ -7,7 +7,7 @@ using Market.Tests.Fixtures;
 
 namespace Market.Tests.Services.ProductServiceTests.CreateProductTest;
 
-[Collection("CreateIntegration")]
+[Collection("CreateProductIntegration")]
 public class CreateProductValidationTest(IntegrationTestWebAppFactory factory) : BaseGrpcTest<IProductServiceGrpc>(factory)
 {
     [Fact]
